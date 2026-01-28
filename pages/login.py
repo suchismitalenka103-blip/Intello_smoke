@@ -437,30 +437,30 @@ class Login(BaseClass):
             self.login_task(log)
         except:
             print("login fail")
-        # try:
-        #     self.camp_join(log)
-        # except:
-        #     print("camp join fail")
-        # try:
-        #     self.call_activity(log)
-        # except:
-        #     print("camp join fail")
-        # try:
-        #     self.hold_action(log)
-        # except:
-        #     print("Hold fail")
-        # try:
-        #     self.consult(log)
-        # except:
-        #     print("cosult call fail")
-        # try:
-        #     self.transfer(log)
-        # except:
-        #     print("transfer fail")
-        # try:
-        #     self.logout(log)
-        # except:
-        #     print("logout fail")
+        try:
+            self.camp_join(log)
+        except:
+            print("camp join fail")
+        try:
+            self.call_activity(log)
+        except:
+            print("camp join fail")
+        try:
+            self.hold_action(log)
+        except:
+            print("Hold fail")
+        try:
+            self.consult(log)
+        except:
+            print("cosult call fail")
+        try:
+            self.transfer(log)
+        except:
+            print("transfer fail")
+        try:
+            self.logout(log)
+        except:
+            print("logout fail")
         # log.info("End ignore")
         # aes = AesLogin(self.driver)
         # return aes

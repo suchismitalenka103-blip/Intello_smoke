@@ -14,12 +14,12 @@ class TestOne:
     #     ac.main_atomos()
 
     def test_one(self):
-        self.driver.delete_all_cookies()
+        # self.driver.delete_all_cookies()
         # print("test one started")
-        # lp = Login(self.driver)
-        # lp.login_op()
-        # pc = Process_Calling(self.driver)
-        # pc.process_calling()
+        lp = Login(self.driver)
+        lp.login_op()
+        pc = Process_Calling(self.driver)
+        pc.process_calling()
         # self.driver.close()
         ac = Agent_calling(self.driver)
         ac.agent_activity()

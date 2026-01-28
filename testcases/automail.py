@@ -1,5 +1,5 @@
 
-with open(r"report.html", 'r', encoding="utf8") as fp:
+with open(r"report1.html", 'r', encoding="utf8") as fp:
     try:
         file = fp.read()
         # print(file)
@@ -172,7 +172,7 @@ html = f'''\
    <body>
 
      <p> Dear Sir,<br>
-     please find below sanity test report for channels “Telephone, Email and Chat” performed on qa server (URL - https://qaradius.in.qamajor.radius-ois.ai/intello/login/).</p>
+     please find below automation test report for channel “call” performed on qa server (URL - https://qaradius.in.qamajor.radius-ois.ai/intello/login/).</p>
      <p> </p>
       <table style="border: 1px solid black;border-collapse: collapse;width: 95%">
          <tr>
@@ -201,7 +201,7 @@ import datetime
 # sender_email = "demo_radius@visnet.in"
 sender_email = "testing_radius@visnet.in"
 receiver_email = ["suchismita.lenka@visnet.in"]
-# receiver_email = ["biswajit.biswal@visnet.in"]
+# receiver_email = ["suman@radius-ois.ai","biswajit.biswal@visnet.in","shreekant.nayak@visnet.in"]
 cc_email = ["suchismita.lenka@visnet.in"]
 # receiver_email = ["shreekant.nayak@visnet.in"]
 # receiver_email = ["suman.subudhi@visnet.in", "sourya.dhal@visnet.in", "alok.kumar@visnet.in", "shreekant.nayak@visnet.in", "hitebrata.bhainsa@visnet.in", "suchilita.swain@visnet.in", "suvijoy.das@visnet.in", "taratarini.patnaik@visnet.in", "rashmirekha.sahu@visnet.in", "payal.mohanty@visnet.in"]

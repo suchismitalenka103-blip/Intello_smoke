@@ -68,6 +68,7 @@ class Agent_calling(BaseClass):
     agent_pannel = "//div[@class='item_blockin']"
     transfer = "(//button[@ngbtooltip='Transfer'])[2]"
     consult = "(//button[@ngbtooltip='Consult'])[2]"
+    conference = "(//button[@ngbtooltip='Conference'])[2]"
     fly_note = '''(//textarea[@formcontrolname="agentNote"])[2]'''
     fly_note_check = "(//div[@class='anc_box ng-star-inserted'])//div[@class='col-9 px-2']//div[@class='anc_note_detail']//span"
     accept_btn = "//button[contains(text(),'Accept')]"
@@ -86,6 +87,9 @@ class Agent_calling(BaseClass):
     mark_done = "(//div[contains(@class,'int_opts')]//button[contains(@class,'int_opts_btn')])[1]"
     dispostion_tab = "//div[@class='intopt_schedulepad']"
     disp_ok_btn = "//button[@type='button'][normalize-space()='Ok']"
+    consult_transfer_btn = "(//button[@ngbtooltip='Consult Transfer'])"
+    consult_merge_btn = "//button[@ngbtooltip='Merge']"
+    conference_txt = "(//span[contains(text(),'Conference')])[2]"
 
     # Locators for logout
     active_profile = "//span[@class='profiler_btn_img Ready']//img[@alt='Profile']"
@@ -361,45 +365,262 @@ class Agent_calling(BaseClass):
             self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}(crossx)logout.png")
 
     def agent_consult(self, log):
-        time.sleep(2)
-        self.driver.find_element(By.XPATH, self.interaction_add).click()
-        time.sleep(1)
-        self.driver.find_element(By.XPATH, self.dial_pad).send_keys(LoginData.test_mobile_two)
-        time.sleep(2)
-        self.driver.find_element(By.XPATH, self.dial_icon).click()
-        time.sleep(10)
-        call_status = self.driver.find_element(By.XPATH, self.call_status_hover)
-        action = ActionChains(self.driver)
-        action.move_to_element(call_status).perform()
-        time.sleep(2)
-        value = self.driver.find_element(By.XPATH, self.status_value).text
-        print(value)
-        if value == "Established":
-            print("~Agent Dail an OutBound call from process : Success")
-        time.sleep(1)
-        self.driver.find_element(By.XPATH, self.agent_tab).click()
-        time.sleep(2)
-        # action = ActionChains(self.driver)
-        # action.move_to_element(agent_pannel).perform()
-        # time.sleep(2)
-        self.driver.find_element(By.XPATH, self.agent_pannel).click()
-        time.sleep(1)
-        # action = ActionChains(self.driver)
-        # action.move_to_element(pannel1).perform()
-        # time.sleep(2)
-        self.driver.find_element(By.XPATH, self.consult).click()
-        time.sleep(2)
-        self.driver.find_element(By.XPATH, self.fly_note).send_keys(LoginData.consult_transfer_note)
-        time.sleep(1)
-        self.driver.find_element(By.XPATH, self.submit_btn).click()
-        time.sleep(1)
-        consult_call_check = self.driver.find_element(By.XPATH, self.consult_check)
-        assert consult_call_check.is_displayed()
-        # disp_tab = WebDriverWait(self.driver, 30).until(
-        #     EC.element_to_be_clickable((By.XPATH, self.disposition_click)))
-        # assert disp_tab.is_displayed()
-        log.info("~Agent1 Transfer the call to agent2 in process : Success")
-        self.markdone()
+        try:
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.interaction_add).click()
+            time.sleep(1)
+            self.driver.find_element(By.XPATH, self.dial_pad).send_keys(LoginData.test_mobile_two)
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.dial_icon).click()
+            time.sleep(6)
+            call_status = self.driver.find_element(By.XPATH, self.call_status_hover)
+            action = ActionChains(self.driver)
+            action.move_to_element(call_status).perform()
+            time.sleep(2)
+            value = self.driver.find_element(By.XPATH, self.status_value).text
+            print(value)
+            if value == "Established":
+                print("~Agent Dail an OutBound call from process : Success")
+            time.sleep(1)
+            self.driver.find_element(By.XPATH, self.agent_tab).click()
+            time.sleep(2)
+            # action = ActionChains(self.driver)
+            # action.move_to_element(agent_pannel).perform()
+            # time.sleep(2)
+            self.driver.find_element(By.XPATH, self.agent_pannel).click()
+            time.sleep(1)
+            # action = ActionChains(self.driver)
+            # action.move_to_element(pannel1).perform()
+            # time.sleep(2)
+            self.driver.find_element(By.XPATH, self.consult).click()
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.fly_note).send_keys(LoginData.consult_transfer_note)
+            time.sleep(1)
+            self.driver.find_element(By.XPATH, self.submit_btn).click()
+            time.sleep(1)
+            consult_call_check = self.driver.find_element(By.XPATH, self.consult_check)
+            assert consult_call_check.is_displayed()
+            # disp_tab = WebDriverWait(self.driver, 30).until(
+            #     EC.element_to_be_clickable((By.XPATH, self.disposition_click)))
+            # assert disp_tab.is_displayed()
+            print("~Agent1 consult the call to agent2 in process : Success")
+        except:
+            print("~Agent1 consult the call to agent2 in process : Fail")
+            self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}Agent1 consult transfer the call to agent2 in process.png")
+
+        try:
+            self.driver.switch_to.window(self.driver.window_handles[1])
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.accept_btn).click()
+            time.sleep(1)
+            call_status = self.driver.find_element(By.XPATH, self.call_status_hover)
+            action = ActionChains(self.driver)
+            action.move_to_element(call_status).perform()
+            time.sleep(2)
+            value = self.driver.find_element(By.XPATH, self.status_value).text
+            print(value)
+            if value == "Established":
+                print("~Agent2 accept the consult call : Success")
+            # log.info("~Agent2 accept consult transfer the call to agent2 in process : Success")
+            # self.markdone()
+        except:
+            print("~Agent2 accept the consult transfer call : Fail")
+            self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}Agent2 accept the consult call.png")
+
+    def consult_transfer(self,log):
+        try:
+            self.agent_consult(log)
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.consult_transfer_btn).click()
+            time.sleep(1)
+            disp_tab = WebDriverWait(self.driver, 30).until(
+                EC.element_to_be_clickable((By.XPATH, self.disposition_click)))
+            assert disp_tab.is_displayed()
+            log.info("~Agent1 Consult Transfer the call to agent2 in process : Success")
+            self.markdone()
+        except:
+            log.error("~Agent1 Consult Transfer the call to agent2 in process : Success")
+
+        try:
+            self.driver.switch_to.window(self.driver.window_handles[1])
+            note_check = self.driver.find_element(By.XPATH, self.fly_note_check).text
+            time.sleep(1)
+            print(note_check)
+            assert note_check == LoginData.consult_transfer_note
+            log.info("~Consult Transfer note is appearing to agent2 : Success")
+        except:
+            log.error("~Consult Transfer note is appearing to agent2 : Success")
+        try:
+            self.driver.find_element(By.XPATH, self.hang_up).click()
+            time.sleep(2)
+            disp_tab = WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.disposition_click)))
+            assert disp_tab.is_displayed()
+            log.info("~Agent2 hang up the consult transfer call: Success")
+
+        except:
+            log.error("~Agent2 hang up the consult transfer call :FAIL")
+        try:
+            self.markdone()
+            toast = self.driver.find_element(By.XPATH, self.success_toast)
+            assert toast.is_displayed()
+            log.info("~Agent2 successfully mark done the consult transfer call : Success")
+        except:
+            log.error("~Agent2 successfully mark done the consult transfer call: FAIL")
+
+    def agent_consult_merge(self,log):
+        try:
+            self.agent_consult(log)
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.accept_btn).click()
+            time.sleep(1)
+            call_status = self.driver.find_element(By.XPATH, self.call_status_hover)
+            action = ActionChains(self.driver)
+            action.move_to_element(call_status).perform()
+            time.sleep(2)
+            value = self.driver.find_element(By.XPATH, self.status_value).text
+            print(value)
+            if value == "Established":
+                log.info("~Agent2 accept the consult call : Success")
+            # log.info("~Agent2 accept consult transfer the call to agent2 in process : Success")
+            # self.markdone()
+        except:
+            log.error("~Agent2 accept the consult transfer call : Fail")
+            self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}Agent2 accept the consult call.png")
+        try:
+            # self.agent_consult(log)
+            self.driver.switch_to.window(self.driver.window_handles[1])
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.consult_merge_btn).click()
+            time.sleep(1)
+            # disp_tab = WebDriverWait(self.driver, 30).until(
+            #     EC.element_to_be_clickable((By.XPATH, self.disposition_click)))
+            # assert disp_tab.is_displayed()
+            txt1 = self.driver.find_element(By.XPATH.conference_txt)
+            assert txt1.is_diplayed()
+            log.info("~Agent1 Consult conference the call to agent2 in process : Success")
+            self.markdone()
+        except:
+            log.error("~Agent1 Consult conference the call to agent2 in process : Success")
+
+        try:
+            self.driver.switch_to.window(self.driver.window_handles[1])
+            note_check = self.driver.find_element(By.XPATH, self.fly_note_check).text
+            time.sleep(1)
+            print(note_check)
+            assert note_check == LoginData.consult_transfer_note
+            log.info("~Consult conference note is appearing to agent2 : Success")
+        except:
+            log.error("~Consult conference note is appearing to agent2 : Success")
+        try:
+            self.driver.find_element(By.XPATH, self.hang_up).click()
+            time.sleep(2)
+            disp_tab = WebDriverWait(self.driver, 30).until(
+            EC.element_to_be_clickable((By.XPATH, self.disposition_click)))
+            assert disp_tab.is_displayed()
+            log.info("~Agent2 hang up the conference transfer call: Success")
+
+        except:
+            log.error("~Agent2 hang up the consult transfer call :FAIL")
+        try:
+            self.markdone()
+            toast = self.driver.find_element(By.XPATH, self.success_toast)
+            assert toast.is_displayed()
+            log.info("~Agent2 successfully mark done the consult transfer call : Success")
+        except:
+            log.error("~Agent2 successfully mark done the consult transfer call: FAIL")
+        try:
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            time.sleep(1)
+            self.driver.find_element(By.XPATH, self.hang_up).click()
+            time.sleep(2)
+            disp_tab = WebDriverWait(self.driver, 30).until(
+                EC.element_to_be_clickable((By.XPATH, self.disposition_click)))
+            assert disp_tab.is_displayed()
+            self.markdone()
+            toast = self.driver.find_element(By.XPATH, self.success_toast)
+            assert toast.is_displayed()
+            log.info("~Agent1 successfully mark done the consult conference call : Success")
+        except:
+            log.error("~Agent2 successfully mark done the consult conference call: FAIL")
+
+    def direct_conference(self,log):
+        try:
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.interaction_add).click()
+            time.sleep(1)
+            self.driver.find_element(By.XPATH, self.dial_pad).send_keys(LoginData.test_mobile_two)
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.dial_icon).click()
+            time.sleep(10)
+            call_status = self.driver.find_element(By.XPATH, self.call_status_hover)
+            action = ActionChains(self.driver)
+            action.move_to_element(call_status).perform()
+            time.sleep(2)
+            value = self.driver.find_element(By.XPATH, self.status_value).text
+            print(value)
+            if value == "Established":
+                print("~Agent Dail an OutBound call from process : Success")
+            time.sleep(1)
+            self.driver.find_element(By.XPATH, self.agent_tab).click()
+            time.sleep(2)
+            # action = ActionChains(self.driver)
+            # action.move_to_element(agent_pannel).perform()
+            # time.sleep(2)
+            self.driver.find_element(By.XPATH, self.agent_pannel).click()
+            time.sleep(1)
+            self.driver.find_element(By.XPATH, self.conference).click()
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.fly_note).send_keys(LoginData.conference_note)
+            time.sleep(1)
+            self.driver.find_element(By.XPATH, self.submit_btn).click()
+            time.sleep(1)
+            txt1 = self.driver.find_element(By.XPATH.conference_txt)
+            assert txt1.is_diplayed()
+            log.info("~Agent1 conference the call to agent2 in process : Success")
+        except:
+            log.erro("~Agent1 conference the call to agent2 in process : Fail")
+        # self.markdone()
+        try:
+            self.driver.switch_to.window(self.driver.window_handles[1])
+            time.sleep(1)
+            self.driver.find_element(By.XPATH, self.accept_btn).click()
+            time.sleep(1)
+            call_status = self.driver.find_element(By.XPATH, self.call_status_hover)
+            action = ActionChains(self.driver)
+            action.move_to_element(call_status).perform()
+            time.sleep(2)
+            value = self.driver.find_element(By.XPATH, self.status_value).text
+            print(value)
+            if value == "Established":
+                log.info("~Agent2 accept the conference call : Success")
+            log.info("~Agent2 accept conference the call to agent2 in process : Success")
+        except:
+            log.error("~Agent2 accept conference the call to agent2 in process : Fail")
+        try:
+            self.driver.find_element(By.XPATH, self.hang_up).click()
+            time.sleep(2)
+            disp_tab = WebDriverWait(self.driver, 30).until(
+                EC.element_to_be_clickable((By.XPATH, self.disposition_click)))
+            assert disp_tab.is_displayed()
+            log.info("~Agent2 hang up the conference call: Success")
+            self.markdone()
+        except:
+            log.error("~Agent2 hang up the conference call: Fail")
+        try:
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            time.sleep(1)
+            self.driver.find_element(By.XPATH, self.hang_up).click()
+            time.sleep(2)
+            disp_tab = WebDriverWait(self.driver, 30).until(
+                EC.element_to_be_clickable((By.XPATH, self.disposition_click)))
+            assert disp_tab.is_displayed()
+            log.info("~Agent1 hang up the conference call: Success")
+            self.markdone()
+        except:
+            log.error("~Agent1 hang up the conference call: Fail")
 
     def agent_activity(self):
         log = self.getLogger()
@@ -422,9 +643,17 @@ class Agent_calling(BaseClass):
         except:
             print("Transfer fail")
         try:
-            self.agent_consult(log)
+            self.consult_transfer(log)
         except:
             print("Consult fail")
+        try:
+            self.agent_consult_merge(log)
+        except:
+            print("Consultmerge fail")
+        try:
+            self.direct_conference(log)
+        except:
+            print("Conference fail")
         try:
             self.logout(log)
             self.driver.switch_to.window(self.driver.window_handles[1])

@@ -9,8 +9,8 @@ class LoginData:
     login_data1 = {"username": "demotestagent1", "password": "Demotestagent@1"}
     # login_data = {"username": "suchismitaa", "password": "suchismita"}
     aes_login_data = {"username": "demoaesagent", "password": "demoaesagent"}
-    chat_login_data = "chatagent"
-    email_login_data = "emailagent"
+    chat_login_data = "Chatagent@0"
+    email_login_data = "Emailagent@1"
     # chat client url
     chat_client_url = "https://qa.radius.visnet.in/RadiusChatClient/"
     campaign_name = "demo_test_camp"
@@ -21,7 +21,7 @@ class LoginData:
     aes_extn = "40038"
     aes_psw = "40038"
     chat_extn = "auto"
-    email_extn = "autoemail"
+    email_extn = "auto"
 
     # my_mobile = "6746663958"
     test_mobile_one = "6746663958"
@@ -31,6 +31,6 @@ class LoginData:
     # test_mobile_four = "958"
     # test_mobile_one = "7846972242"
     transfer_note = 'Agent1 is transffered the call to another agent'
-    consult_transfer_note = "Agent1 is consult the call to another agent"
-
+    consult_transfer_note = "Agent1 is consult transfer the call to another agent"
+    conference_note = "Agent1 is conference the call to another agent"
 

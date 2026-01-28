@@ -14228,3 +14228,864 @@
 2026-01-13 10:16:42,712 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
 2026-01-13 10:17:36,921 :ERROR :agent_activity :~Logout : Fail
 2026-01-13 10:18:00,793 :INFO :agent_activity :~Logout : Success
+2026-01-20 11:04:48,045 :INFO :login_op :~Intello LogIn page Opened : Success
+2026-01-20 11:05:07,162 :INFO :login_op :~Agent (Call) LogIn : Success
+2026-01-20 11:05:19,482 :INFO :login_op :~Agent(Telephony channel) register : Success
+2026-01-20 11:05:19,598 :ERROR :agent_activity :~Intello LogIn page Opened : FAIL
+2026-01-20 11:05:19,599 :ERROR :agent_activity :~Agent process Join Un-join : FAIL
+2026-01-20 11:05:21,604 :ERROR :agent_activity :~Intello LogIn page Opened in different tab : FAIL
+2026-01-20 11:05:23,609 :ERROR :agent_activity :~Agent to agent Transfer in process : FAIL
+2026-01-20 11:05:23,611 :ERROR :agent_activity :~Agent2 accept the transfer call : FAIL
+2026-01-20 11:05:23,613 :ERROR :agent_activity :~Transfer note is appearing to agent2 : FAIL
+2026-01-20 11:05:23,615 :ERROR :agent_activity :~Agent2 hang up the transfer call :FAIL
+2026-01-20 11:05:23,617 :ERROR :agent_activity :~Agent2 successfully mark done the transfer call: FAIL
+2026-01-20 11:07:08,025 :INFO :login_op :~Intello LogIn page Opened : Success
+2026-01-20 11:07:25,161 :INFO :login_op :~Agent (Call) LogIn : Success
+2026-01-20 11:08:07,495 :INFO :login_op :~Agent(Telephony channel) register : Success
+2026-01-20 11:08:27,865 :INFO :login_op :~Agent Campaign Join Un-join : Success
+2026-01-20 11:08:39,052 :INFO :login_op :~Agent State change to Ready : Success
+2026-01-20 11:09:00,679 :INFO :login_op :~Agent Dail an OutBound call : Success
+2026-01-20 11:09:02,776 :INFO :login_op :~Agent Hold/Un-hold : Success
+2026-01-20 11:09:25,180 :INFO :login_op :~Agent Consult-Conference : Success
+2026-01-20 11:09:28,449 :INFO :login_op :~Mark done process : Success
+2026-01-20 11:10:15,021 :INFO :login_op :~Agent Consult-Transfer : Success
+2026-01-20 11:10:48,684 :INFO :login_op :~Agent Transfer (single-step) : Success
+2026-01-20 11:11:12,716 :INFO :login_op :~Logout : Success
+2026-01-20 11:11:17,761 :INFO :process_calling :~Intello LogIn page Opened : Success
+2026-01-20 11:11:34,699 :INFO :process_calling :~Agent (Call) LogIn : Success
+2026-01-20 11:12:17,107 :INFO :process_calling :~Agent(Telephony channel) register : Success
+2026-01-20 11:12:24,533 :INFO :process_calling :~Agent process Join Un-join : Success
+2026-01-20 11:12:35,722 :INFO :process_calling :~Agent State change to Ready after joining process : Success
+2026-01-20 11:12:57,404 :INFO :process_calling :~Agent Dail an OutBound call from process : Success
+2026-01-20 11:12:59,544 :INFO :process_calling :~Agent Hold/Un-hold on process : Success
+2026-01-20 11:13:22,089 :INFO :process_calling :~Agent Consult-Conference in process : Success
+2026-01-20 11:13:25,359 :INFO :process_calling :~Mark done in process : Success
+2026-01-20 11:13:59,066 :INFO :process_calling :~Agent Consult-Transfer in process : Success
+2026-01-20 11:14:39,888 :INFO :process_calling :~Agent Transfer (single-step) in process : Success
+2026-01-20 11:15:05,019 :INFO :process_calling :~Logout : Success
+2026-01-20 11:15:05,339 :ERROR :agent_activity :~Intello LogIn page Opened : FAIL
+2026-01-20 11:15:05,340 :ERROR :agent_activity :~Agent process Join Un-join : FAIL
+2026-01-20 11:15:07,343 :ERROR :agent_activity :~Intello LogIn page Opened in different tab : FAIL
+2026-01-20 11:15:09,347 :ERROR :agent_activity :~Agent to agent Transfer in process : FAIL
+2026-01-20 11:15:09,348 :ERROR :agent_activity :~Agent2 accept the transfer call : FAIL
+2026-01-20 11:15:09,349 :ERROR :agent_activity :~Transfer note is appearing to agent2 : FAIL
+2026-01-20 11:15:09,350 :ERROR :agent_activity :~Agent2 hang up the transfer call :FAIL
+2026-01-20 11:15:09,352 :ERROR :agent_activity :~Agent2 successfully mark done the transfer call: FAIL
+2026-01-20 11:15:19,356 :ERROR :agent_activity :~Logout : Fail
+2026-01-20 11:20:17,466 :INFO :login_op :~Intello LogIn page Opened : Success
+2026-01-20 11:20:35,073 :INFO :login_op :~Agent (Call) LogIn : Success
+2026-01-20 11:21:17,360 :INFO :login_op :~Agent(Telephony channel) register : Success
+2026-01-20 11:21:37,822 :INFO :login_op :~Agent Campaign Join Un-join : Success
+2026-01-20 11:21:49,079 :INFO :login_op :~Agent State change to Ready : Success
+2026-01-20 11:22:10,688 :INFO :login_op :~Agent Dail an OutBound call : Success
+2026-01-20 11:22:12,787 :INFO :login_op :~Agent Hold/Un-hold : Success
+2026-01-20 11:22:35,175 :INFO :login_op :~Agent Consult-Conference : Success
+2026-01-20 11:22:38,434 :INFO :login_op :~Mark done process : Success
+2026-01-20 11:23:25,043 :INFO :login_op :~Agent Consult-Transfer : Success
+2026-01-20 11:23:58,707 :INFO :login_op :~Agent Transfer (single-step) : Success
+2026-01-20 11:24:22,736 :INFO :login_op :~Logout : Success
+2026-01-20 11:24:27,782 :INFO :process_calling :~Intello LogIn page Opened : Success
+2026-01-20 11:24:44,240 :INFO :process_calling :~Agent (Call) LogIn : Success
+2026-01-20 11:25:26,530 :INFO :process_calling :~Agent(Telephony channel) register : Success
+2026-01-20 11:25:33,758 :INFO :process_calling :~Agent process Join Un-join : Success
+2026-01-20 11:25:44,953 :INFO :process_calling :~Agent State change to Ready after joining process : Success
+2026-01-20 11:26:06,569 :INFO :process_calling :~Agent Dail an OutBound call from process : Success
+2026-01-20 11:26:08,667 :INFO :process_calling :~Agent Hold/Un-hold on process : Success
+2026-01-20 11:26:31,102 :INFO :process_calling :~Agent Consult-Conference in process : Success
+2026-01-20 11:26:34,348 :INFO :process_calling :~Mark done in process : Success
+2026-01-20 11:27:07,929 :INFO :process_calling :~Agent Consult-Transfer in process : Success
+2026-01-20 11:27:48,725 :INFO :process_calling :~Agent Transfer (single-step) in process : Success
+2026-01-20 11:28:13,835 :INFO :process_calling :~Logout : Success
+2026-01-20 11:28:14,187 :ERROR :agent_activity :~Intello LogIn page Opened : FAIL
+2026-01-20 11:28:14,188 :ERROR :agent_activity :~Agent process Join Un-join : FAIL
+2026-01-20 11:28:16,193 :ERROR :agent_activity :~Intello LogIn page Opened in different tab : FAIL
+2026-01-20 11:28:18,197 :ERROR :agent_activity :~Agent to agent Transfer in process : FAIL
+2026-01-20 11:28:18,198 :ERROR :agent_activity :~Agent2 accept the transfer call : FAIL
+2026-01-20 11:28:18,199 :ERROR :agent_activity :~Transfer note is appearing to agent2 : FAIL
+2026-01-20 11:28:18,200 :ERROR :agent_activity :~Agent2 hang up the transfer call :FAIL
+2026-01-20 11:28:18,202 :ERROR :agent_activity :~Agent2 successfully mark done the transfer call: FAIL
+2026-01-20 11:28:28,207 :ERROR :agent_activity :~Logout : Fail
+2026-01-20 11:29:28,688 :INFO :login_op :~Intello LogIn page Opened : Success
+2026-01-20 11:29:47,607 :INFO :login_op :~Agent (Call) LogIn : Success
+2026-01-20 11:30:29,896 :INFO :login_op :~Agent(Telephony channel) register : Success
+2026-01-20 11:30:50,236 :INFO :login_op :~Agent Campaign Join Un-join : Success
+2026-01-20 11:31:01,422 :INFO :login_op :~Agent State change to Ready : Success
+2026-01-20 11:31:23,049 :INFO :login_op :~Agent Dail an OutBound call : Success
+2026-01-20 11:31:25,140 :INFO :login_op :~Agent Hold/Un-hold : Success
+2026-01-20 11:31:47,527 :INFO :login_op :~Agent Consult-Conference : Success
+2026-01-20 11:31:50,752 :INFO :login_op :~Mark done process : Success
+2026-01-20 11:32:37,323 :INFO :login_op :~Agent Consult-Transfer : Success
+2026-01-20 11:33:30,534 :ERROR :login_op :~Agent Transfer (single-step) : Fail
+2026-01-20 11:33:53,691 :ERROR :login_op :~Logout : Fail
+2026-01-20 11:33:58,820 :INFO :process_calling :~Intello LogIn page Opened : Success
+2026-01-20 11:34:30,815 :ERROR :process_calling :~Agent (Call) LogIn : FAIL
+2026-01-20 11:35:23,952 :INFO :login_op :~Intello LogIn page Opened : Success
+2026-01-20 11:35:40,610 :INFO :login_op :~Agent (Call) LogIn : Success
+2026-01-20 11:36:23,257 :INFO :login_op :~Agent(Telephony channel) register : Success
+2026-01-20 11:36:43,603 :INFO :login_op :~Agent Campaign Join Un-join : Success
+2026-01-20 11:36:54,790 :INFO :login_op :~Agent State change to Ready : Success
+2026-01-20 11:37:16,448 :INFO :login_op :~Agent Dail an OutBound call : Success
+2026-01-20 11:37:18,544 :INFO :login_op :~Agent Hold/Un-hold : Success
+2026-01-20 11:37:40,944 :INFO :login_op :~Agent Consult-Conference : Success
+2026-01-20 11:37:44,177 :INFO :login_op :~Mark done process : Success
+2026-01-20 11:38:30,745 :INFO :login_op :~Agent Consult-Transfer : Success
+2026-01-20 11:39:04,420 :INFO :login_op :~Agent Transfer (single-step) : Success
+2026-01-20 11:39:28,438 :INFO :login_op :~Logout : Success
+2026-01-20 11:39:33,482 :INFO :process_calling :~Intello LogIn page Opened : Success
+2026-01-20 11:39:50,196 :INFO :process_calling :~Agent (Call) LogIn : Success
+2026-01-20 11:40:32,670 :INFO :process_calling :~Agent(Telephony channel) register : Success
+2026-01-20 11:40:39,929 :INFO :process_calling :~Agent process Join Un-join : Success
+2026-01-20 11:40:51,107 :INFO :process_calling :~Agent State change to Ready after joining process : Success
+2026-01-20 11:41:12,748 :INFO :process_calling :~Agent Dail an OutBound call from process : Success
+2026-01-20 11:41:14,837 :INFO :process_calling :~Agent Hold/Un-hold on process : Success
+2026-01-20 11:41:37,236 :INFO :process_calling :~Agent Consult-Conference in process : Success
+2026-01-20 11:41:40,477 :INFO :process_calling :~Mark done in process : Success
+2026-01-20 11:42:14,014 :INFO :process_calling :~Agent Consult-Transfer in process : Success
+2026-01-20 11:42:54,740 :INFO :process_calling :~Agent Transfer (single-step) in process : Success
+2026-01-20 11:43:19,830 :INFO :process_calling :~Logout : Success
+2026-01-20 11:43:24,878 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 11:43:41,749 :INFO :agent_activity :~Agent (Call) LogIn : Success
+2026-01-20 11:44:24,167 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 11:44:31,403 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 11:44:42,583 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 11:44:53,664 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 11:45:11,595 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 11:45:53,929 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 11:46:08,152 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 11:46:45,671 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 11:46:51,776 :INFO :agent_activity :~Agent2 accept the transfer call : Success
+2026-01-20 11:46:52,796 :INFO :agent_activity :~Transfer note is appearing to agent2 : Success
+2026-01-20 11:46:54,906 :INFO :agent_activity :~Agent2 hang up the transfer call: Success
+2026-01-20 11:46:55,600 :INFO :agent_activity :~Agent2 successfully mark done the transfer call : Success
+2026-01-20 11:47:21,884 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 11:48:16,129 :ERROR :agent_activity :~Logout : Fail
+2026-01-20 11:48:37,656 :INFO :agent_activity :~Logout : Success
+2026-01-20 11:51:35,969 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 11:51:52,933 :INFO :agent_activity :~Agent (Call) LogIn : Success
+2026-01-20 11:52:40,285 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 11:52:47,563 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 11:52:58,760 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 11:53:09,849 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 11:53:28,934 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 11:54:11,311 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 11:54:25,563 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 11:55:57,574 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 11:56:03,464 :INFO :agent_activity :~Agent2 accept the transfer call : Success
+2026-01-20 11:56:04,488 :INFO :agent_activity :~Transfer note is appearing to agent2 : Success
+2026-01-20 11:56:13,640 :INFO :agent_activity :~Agent2 hang up the transfer call: Success
+2026-01-20 11:56:17,799 :INFO :agent_activity :~Agent2 successfully mark done the transfer call : Success
+2026-01-20 11:57:47,004 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 14:31:11,251 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 14:31:28,331 :INFO :agent_activity :~Agent (Call) LogIn : Success
+2026-01-20 14:32:10,676 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 14:32:17,901 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 14:32:29,080 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 14:32:40,167 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 14:32:57,946 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 14:33:40,255 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 14:33:54,488 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 14:34:31,896 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 14:34:38,007 :INFO :agent_activity :~Agent2 accept the transfer call : Success
+2026-01-20 14:34:39,026 :INFO :agent_activity :~Transfer note is appearing to agent2 : Success
+2026-01-20 14:34:41,130 :INFO :agent_activity :~Agent2 hang up the transfer call: Success
+2026-01-20 14:34:41,831 :INFO :agent_activity :~Agent2 successfully mark done the transfer call : Success
+2026-01-20 14:35:08,014 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 14:35:13,401 :INFO :agent_activity :~Agent2 accept the consult call : Success
+2026-01-20 14:35:16,526 :INFO :agent_activity :~Agent1 Consult Transfer the call to agent2 in process : Success
+2026-01-20 14:35:18,298 :INFO :agent_activity :~Consult Transfer note is appearing to agent2 : Success
+2026-01-20 14:35:20,395 :INFO :agent_activity :~Agent2 hang up the consult transfer call: Success
+2026-01-20 14:35:21,069 :INFO :agent_activity :~Agent2 successfully mark done the consult transfer call : Success
+2026-01-20 14:35:47,298 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 14:36:04,360 :ERROR :agent_activity :~Agent2 accept the consult transfer call : Fail
+2026-01-20 14:36:21,515 :ERROR :agent_activity :~Agent1 Consult conference the call to agent2 in process : Success
+2026-01-20 14:36:36,563 :ERROR :agent_activity :~Consult conference note is appearing to agent2 : Success
+2026-01-20 14:36:38,676 :INFO :agent_activity :~Agent2 hang up the conference transfer call: Success
+2026-01-20 14:36:39,365 :INFO :agent_activity :~Agent2 successfully mark done the consult transfer call : Success
+2026-01-20 14:36:43,162 :INFO :agent_activity :~Agent1 successfully mark done the consult conference call : Success
+2026-01-20 14:37:04,553 :INFO :agent_activity :~Logout : Success
+2026-01-20 14:37:25,875 :INFO :agent_activity :~Logout : Success
+2026-01-20 14:38:24,220 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 14:40:50,019 :INFO :agent_activity :~Agent (Call) LogIn : Success
+2026-01-20 14:41:36,270 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 14:41:43,505 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 14:41:54,698 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 14:42:05,792 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 14:42:24,510 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 14:43:06,809 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 14:43:21,092 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 14:44:04,466 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 14:44:10,616 :INFO :agent_activity :~Agent2 accept the transfer call : Success
+2026-01-20 14:44:11,641 :INFO :agent_activity :~Transfer note is appearing to agent2 : Success
+2026-01-20 14:44:19,307 :INFO :agent_activity :~Agent2 hang up the transfer call: Success
+2026-01-20 14:44:23,266 :INFO :agent_activity :~Agent2 successfully mark done the transfer call : Success
+2026-01-20 14:45:16,030 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 14:45:37,516 :INFO :agent_activity :~Agent2 accept the consult call : Success
+2026-01-20 14:45:47,199 :INFO :agent_activity :~Agent1 Consult Transfer the call to agent2 in process : Success
+2026-01-20 14:45:55,562 :INFO :agent_activity :~Consult Transfer note is appearing to agent2 : Success
+2026-01-20 14:46:00,872 :INFO :agent_activity :~Agent2 hang up the consult transfer call: Success
+2026-01-20 14:46:04,185 :INFO :agent_activity :~Agent2 successfully mark done the consult transfer call : Success
+2026-01-20 14:47:09,992 :ERROR :agent_activity :~Agent1 consult the call to agent2 in process : Fail
+2026-01-20 14:48:37,396 :ERROR :agent_activity :~Agent2 accept the consult transfer call : Fail
+2026-01-20 14:51:02,124 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 14:51:18,364 :INFO :agent_activity :~Agent (Call) LogIn : Success
+2026-01-20 14:52:14,533 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 14:52:21,800 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 14:52:32,989 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 14:52:44,084 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 14:53:02,008 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 14:53:44,313 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 14:53:58,554 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 14:54:35,990 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 14:54:42,172 :INFO :agent_activity :~Agent2 accept the transfer call : Success
+2026-01-20 14:54:43,197 :INFO :agent_activity :~Transfer note is appearing to agent2 : Success
+2026-01-20 14:54:45,320 :INFO :agent_activity :~Agent2 hang up the transfer call: Success
+2026-01-20 14:54:46,044 :INFO :agent_activity :~Agent2 successfully mark done the transfer call : Success
+2026-01-20 14:55:27,159 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 14:55:47,570 :ERROR :agent_activity :~Agent2 accept the consult transfer call : Fail
+2026-01-20 14:55:50,796 :INFO :agent_activity :~Agent1 Consult Transfer the call to agent2 in process : Success
+2026-01-20 14:55:52,571 :INFO :agent_activity :~Consult Transfer note is appearing to agent2 : Success
+2026-01-20 14:55:54,692 :INFO :agent_activity :~Agent2 hang up the consult transfer call: Success
+2026-01-20 14:55:55,468 :INFO :agent_activity :~Agent2 successfully mark done the consult transfer call : Success
+2026-01-20 14:56:26,826 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 14:56:43,871 :ERROR :agent_activity :~Agent2 accept the consult transfer call : Fail
+2026-01-20 14:58:16,617 :ERROR :agent_activity :~Agent1 Consult conference the call to agent2 in process : Success
+2026-01-20 14:58:31,656 :ERROR :agent_activity :~Consult conference note is appearing to agent2 : Success
+2026-01-20 14:58:46,696 :ERROR :agent_activity :~Agent2 hang up the consult transfer call :FAIL
+2026-01-20 14:59:32,854 :ERROR :agent_activity :~Agent2 successfully mark done the consult transfer call: FAIL
+2026-01-20 14:59:48,918 :ERROR :agent_activity :~Agent2 successfully mark done the consult conference call: FAIL
+2026-01-20 15:00:10,325 :INFO :agent_activity :~Logout : Success
+2026-01-20 15:00:35,059 :INFO :agent_activity :~Logout : Success
+2026-01-20 15:04:32,003 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 15:04:50,357 :INFO :agent_activity :~Agent (Call) LogIn : Success
+2026-01-20 15:05:05,314 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 15:05:12,517 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 15:05:23,703 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 15:05:34,779 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 15:05:53,211 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 15:06:35,541 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 15:06:49,767 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 15:07:56,467 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 15:08:14,218 :ERROR :agent_activity :~Agent2 accept the transfer call : FAIL
+2026-01-20 15:08:29,274 :ERROR :agent_activity :~Transfer note is appearing to agent2 : FAIL
+2026-01-20 15:08:44,318 :ERROR :agent_activity :~Agent2 hang up the transfer call :FAIL
+2026-01-20 15:09:30,453 :ERROR :agent_activity :~Agent2 successfully mark done the transfer call: FAIL
+2026-01-20 15:10:01,699 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 15:10:07,087 :INFO :agent_activity :~Agent2 accept the consult call : Success
+2026-01-20 15:10:10,226 :INFO :agent_activity :~Agent1 Consult Transfer the call to agent2 in process : Success
+2026-01-20 15:10:11,590 :INFO :agent_activity :~Consult Transfer note is appearing to agent2 : Success
+2026-01-20 15:10:13,700 :INFO :agent_activity :~Agent2 hang up the consult transfer call: Success
+2026-01-20 15:10:14,376 :INFO :agent_activity :~Agent2 successfully mark done the consult transfer call : Success
+2026-01-20 15:10:40,565 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 15:10:57,586 :ERROR :agent_activity :~Agent2 accept the consult transfer call : Fail
+2026-01-20 15:11:00,749 :ERROR :agent_activity :~Agent1 Consult conference the call to agent2 in process : Success
+2026-01-20 15:11:01,808 :INFO :agent_activity :~Consult conference note is appearing to agent2 : Success
+2026-01-20 15:11:43,047 :ERROR :agent_activity :~Agent2 hang up the consult transfer call :FAIL
+2026-01-20 15:12:29,268 :ERROR :agent_activity :~Agent2 successfully mark done the consult transfer call: FAIL
+2026-01-20 15:13:03,417 :ERROR :agent_activity :~Agent2 successfully mark done the consult conference call: FAIL
+2026-01-20 15:13:27,820 :ERROR :agent_activity :~Logout : Fail
+2026-01-20 15:14:10,006 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 15:14:26,895 :INFO :agent_activity :~Agent (Call) LogIn : Success
+2026-01-20 15:15:16,434 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 15:15:23,680 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 15:15:34,864 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 15:15:45,956 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 15:16:03,748 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 15:16:46,046 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 15:17:00,396 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 15:17:45,510 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 15:17:51,630 :INFO :agent_activity :~Agent2 accept the transfer call : Success
+2026-01-20 15:17:52,654 :INFO :agent_activity :~Transfer note is appearing to agent2 : Success
+2026-01-20 15:17:54,765 :INFO :agent_activity :~Agent2 hang up the transfer call: Success
+2026-01-20 15:17:55,480 :INFO :agent_activity :~Agent2 successfully mark done the transfer call : Success
+2026-01-20 15:18:32,971 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 15:18:38,387 :INFO :agent_activity :~Agent2 accept the consult call : Success
+2026-01-20 15:18:41,520 :INFO :agent_activity :~Agent1 Consult Transfer the call to agent2 in process : Success
+2026-01-20 15:18:43,321 :INFO :agent_activity :~Consult Transfer note is appearing to agent2 : Success
+2026-01-20 15:18:45,434 :INFO :agent_activity :~Agent2 hang up the consult transfer call: Success
+2026-01-20 15:18:46,132 :INFO :agent_activity :~Agent2 successfully mark done the consult transfer call : Success
+2026-01-20 15:19:26,257 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 15:22:30,136 :ERROR :agent_activity :~Agent1 Consult conference the call to agent2 in process : Success
+2026-01-20 15:26:24,410 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 15:26:40,629 :INFO :agent_activity :~Agent (Call) LogIn : Success
+2026-01-20 15:27:36,148 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 15:27:43,386 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 15:27:54,573 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 15:28:05,664 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 15:28:23,399 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 15:29:05,708 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 15:29:19,954 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 15:29:57,356 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 15:30:17,963 :ERROR :agent_activity :~Agent2 accept the transfer call : FAIL
+2026-01-20 15:30:18,990 :INFO :agent_activity :~Transfer note is appearing to agent2 : Success
+2026-01-20 15:30:21,098 :INFO :agent_activity :~Agent2 hang up the transfer call: Success
+2026-01-20 15:30:21,816 :INFO :agent_activity :~Agent2 successfully mark done the transfer call : Success
+2026-01-20 15:31:12,370 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 15:31:25,173 :INFO :agent_activity :~Agent2 accept the consult call : Success
+2026-01-20 15:31:35,608 :INFO :agent_activity :~Agent1 Consult Transfer the call to agent2 in process : Success
+2026-01-20 15:31:41,228 :INFO :agent_activity :~Consult Transfer note is appearing to agent2 : Success
+2026-01-20 15:31:46,719 :INFO :agent_activity :~Agent2 hang up the consult transfer call: Success
+2026-01-20 15:31:49,676 :INFO :agent_activity :~Agent2 successfully mark done the consult transfer call : Success
+2026-01-20 15:32:22,738 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 15:32:39,750 :ERROR :agent_activity :~Agent2 accept the consult transfer call : Fail
+2026-01-20 15:35:28,465 :ERROR :agent_activity :~Agent1 Consult conference the call to agent2 in process : Success
+2026-01-20 15:43:51,672 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 15:44:08,557 :ERROR :agent_activity :~Agent (Call) LogIn : FAIL
+2026-01-20 15:44:51,088 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 15:44:58,321 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 15:45:09,510 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 15:45:20,596 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 15:45:38,362 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 15:46:20,636 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 15:46:34,913 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 15:47:12,311 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 15:47:17,998 :INFO :agent_activity :~Agent2 accept the transfer call : Success
+2026-01-20 15:47:19,018 :INFO :agent_activity :~Transfer note is appearing to agent2 : Success
+2026-01-20 15:47:21,121 :INFO :agent_activity :~Agent2 hang up the transfer call: Success
+2026-01-20 15:47:21,804 :INFO :agent_activity :~Agent2 successfully mark done the transfer call : Success
+2026-01-20 15:47:48,124 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 15:47:53,511 :INFO :agent_activity :~Agent2 accept the consult call : Success
+2026-01-20 15:48:25,999 :INFO :agent_activity :~Agent1 Consult Transfer the call to agent2 in process : Success
+2026-01-20 15:48:27,403 :INFO :agent_activity :~Consult Transfer note is appearing to agent2 : Success
+2026-01-20 15:48:29,495 :INFO :agent_activity :~Agent2 hang up the consult transfer call: Success
+2026-01-20 15:48:30,171 :INFO :agent_activity :~Agent2 successfully mark done the consult transfer call : Success
+2026-01-20 15:48:56,367 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 15:49:13,408 :ERROR :agent_activity :~Agent2 accept the consult transfer call : Fail
+2026-01-20 15:49:18,917 :INFO :agent_activity :~Agent2 accept the consult call : Success
+2026-01-20 15:49:22,017 :ERROR :agent_activity :~Agent1 Consult conference the call to agent2 in process : Success
+2026-01-20 15:49:37,077 :ERROR :agent_activity :~Consult conference note is appearing to agent2 : Success
+2026-01-20 15:49:39,178 :INFO :agent_activity :~Agent2 hang up the conference transfer call: Success
+2026-01-20 15:49:39,879 :INFO :agent_activity :~Agent2 successfully mark done the consult transfer call : Success
+2026-01-20 15:49:43,664 :INFO :agent_activity :~Agent1 successfully mark done the consult conference call : Success
+2026-01-20 15:50:05,072 :INFO :agent_activity :~Logout : Success
+2026-01-20 15:50:26,404 :INFO :agent_activity :~Logout : Success
+2026-01-20 16:23:46,207 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 16:24:08,954 :INFO :agent_activity :~Agent (Call) LogIn : Success
+2026-01-20 16:24:51,757 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 16:24:58,985 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 16:25:10,168 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 16:25:21,247 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 16:25:40,327 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 16:26:22,592 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 16:26:36,827 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 16:27:14,142 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 16:27:20,233 :INFO :agent_activity :~Agent2 accept the transfer call : Success
+2026-01-20 16:27:21,256 :INFO :agent_activity :~Transfer note is appearing to agent2 : Success
+2026-01-20 16:27:23,358 :INFO :agent_activity :~Agent2 hang up the transfer call: Success
+2026-01-20 16:27:24,040 :INFO :agent_activity :~Agent2 successfully mark done the transfer call : Success
+2026-01-20 16:27:50,240 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 16:27:55,628 :INFO :agent_activity :~Agent2 accept the consult call : Success
+2026-01-20 16:27:58,822 :INFO :agent_activity :~Agent1 Consult Transfer the call to agent2 in process : Success
+2026-01-20 16:28:00,614 :INFO :agent_activity :~Consult Transfer note is appearing to agent2 : Success
+2026-01-20 16:28:02,717 :INFO :agent_activity :~Agent2 hang up the consult transfer call: Success
+2026-01-20 16:28:03,406 :INFO :agent_activity :~Agent2 successfully mark done the consult transfer call : Success
+2026-01-20 16:28:29,756 :INFO :agent_activity :~Agent1 consult the call to agent2 in process : Success
+2026-01-20 16:28:46,801 :ERROR :agent_activity :~Agent2 accept the consult transfer call : Fail
+2026-01-20 16:29:05,025 :ERROR :agent_activity :~Agent2 accept the consult transfer call : Fail
+2026-01-20 16:29:11,174 :ERROR :agent_activity :~Agent1 Consult conference the call to agent2 in process : Success
+2026-01-20 16:29:26,254 :ERROR :agent_activity :~Consult conference note is appearing to agent2 : Success
+2026-01-20 16:29:41,260 :ERROR :agent_activity :~Agent2 hang up the consult transfer call :FAIL
+2026-01-20 16:29:51,777 :INFO :agent_activity :~Agent2 successfully mark done the consult transfer call : Success
+2026-01-20 16:30:31,259 :ERROR :agent_activity :~Agent2 successfully mark done the consult conference call: FAIL
+2026-01-20 16:31:25,477 :ERROR :agent_activity :~Logout : Fail
+2026-01-20 16:31:48,693 :ERROR :agent_activity :~Logout : Fail
+2026-01-20 16:38:01,499 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 16:38:17,929 :INFO :agent_activity :~Agent (Call) LogIn : Success
+2026-01-20 16:39:20,960 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 16:39:28,293 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 16:39:39,482 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 16:39:50,578 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 16:40:08,342 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 16:40:50,651 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 16:41:04,926 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 16:41:42,335 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 16:41:48,459 :INFO :agent_activity :~Agent2 accept the transfer call : Success
+2026-01-20 16:41:49,478 :INFO :agent_activity :~Transfer note is appearing to agent2 : Success
+2026-01-20 16:41:51,587 :INFO :agent_activity :~Agent2 hang up the transfer call: Success
+2026-01-20 16:41:52,293 :INFO :agent_activity :~Agent2 successfully mark done the transfer call : Success
+2026-01-20 16:49:58,660 :ERROR :agent_activity :~Agent1 Consult Transfer the call to agent2 in process : Success
+2026-01-20 16:50:13,692 :ERROR :agent_activity :~Consult Transfer note is appearing to agent2 : Success
+2026-01-20 16:50:28,755 :ERROR :agent_activity :~Agent2 hang up the consult transfer call :FAIL
+2026-01-20 16:51:14,951 :ERROR :agent_activity :~Agent2 successfully mark done the consult transfer call: FAIL
+2026-01-20 16:52:28,123 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 16:52:44,934 :INFO :agent_activity :~Agent (Call) LogIn : Success
+2026-01-20 16:53:27,237 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 16:53:34,508 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 16:53:45,727 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 16:53:56,809 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 16:54:14,810 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 16:54:57,141 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 16:55:11,364 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 16:55:48,713 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 16:56:07,058 :ERROR :agent_activity :~Agent2 accept the transfer call : FAIL
+2026-01-20 16:56:08,081 :INFO :agent_activity :~Transfer note is appearing to agent2 : Success
+2026-01-20 16:56:51,162 :ERROR :agent_activity :~Agent2 hang up the transfer call :FAIL
+2026-01-20 16:57:37,348 :ERROR :agent_activity :~Agent2 successfully mark done the transfer call: FAIL
+2026-01-20 16:58:37,960 :ERROR :agent_activity :~Agent1 Consult Transfer the call to agent2 in process : Success
+2026-01-20 16:58:52,987 :ERROR :agent_activity :~Consult Transfer note is appearing to agent2 : Success
+2026-01-20 16:59:08,040 :ERROR :agent_activity :~Agent2 hang up the consult transfer call :FAIL
+2026-01-20 16:59:54,245 :ERROR :agent_activity :~Agent2 successfully mark done the consult transfer call: FAIL
+2026-01-20 17:00:45,456 :ERROR :agent_activity :~Agent2 accept the consult transfer call : Fail
+2026-01-20 17:01:02,559 :ERROR :agent_activity :~Agent1 Consult conference the call to agent2 in process : Success
+2026-01-20 17:01:17,584 :ERROR :agent_activity :~Consult conference note is appearing to agent2 : Success
+2026-01-20 17:01:32,594 :ERROR :agent_activity :~Agent2 hang up the consult transfer call :FAIL
+2026-01-20 17:02:06,297 :ERROR :agent_activity :~Agent2 successfully mark done the consult transfer call: FAIL
+2026-01-20 17:43:48,315 :INFO :login_op :~Intello LogIn page Opened : Success
+2026-01-20 17:44:04,915 :INFO :login_op :~Agent (Call) LogIn : Success
+2026-01-20 17:44:47,260 :INFO :login_op :~Agent(Telephony channel) register : Success
+2026-01-20 17:45:07,635 :INFO :login_op :~Agent Campaign Join Un-join : Success
+2026-01-20 17:45:18,817 :INFO :login_op :~Agent State change to Ready : Success
+2026-01-20 17:45:40,435 :INFO :login_op :~Agent Dail an OutBound call : Success
+2026-01-20 17:45:42,538 :INFO :login_op :~Agent Hold/Un-hold : Success
+2026-01-20 17:46:04,938 :INFO :login_op :~Agent Consult-Conference : Success
+2026-01-20 17:46:08,170 :INFO :login_op :~Mark done process : Success
+2026-01-20 17:46:54,759 :INFO :login_op :~Agent Consult-Transfer : Success
+2026-01-20 17:47:28,483 :INFO :login_op :~Agent Transfer (single-step) : Success
+2026-01-20 17:47:52,539 :INFO :login_op :~Logout : Success
+2026-01-20 17:47:57,604 :INFO :process_calling :~Intello LogIn page Opened : Success
+2026-01-20 17:48:14,482 :INFO :process_calling :~Agent (Call) LogIn : Success
+2026-01-20 17:48:56,878 :INFO :process_calling :~Agent(Telephony channel) register : Success
+2026-01-20 17:49:04,142 :INFO :process_calling :~Agent process Join Un-join : Success
+2026-01-20 17:49:15,366 :INFO :process_calling :~Agent State change to Ready after joining process : Success
+2026-01-20 17:49:36,978 :INFO :process_calling :~Agent Dail an OutBound call from process : Success
+2026-01-20 17:49:39,073 :INFO :process_calling :~Agent Hold/Un-hold on process : Success
+2026-01-20 17:50:01,490 :INFO :process_calling :~Agent Consult-Conference in process : Success
+2026-01-20 17:50:04,737 :INFO :process_calling :~Mark done in process : Success
+2026-01-20 17:50:38,293 :INFO :process_calling :~Agent Consult-Transfer in process : Success
+2026-01-20 17:51:19,097 :INFO :process_calling :~Agent Transfer (single-step) in process : Success
+2026-01-20 17:51:44,168 :INFO :process_calling :~Logout : Success
+2026-01-20 17:51:49,222 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 17:52:05,445 :INFO :agent_activity :~Agent (Call) LogIn : Success
+2026-01-20 17:52:47,756 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 17:52:54,985 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 17:53:06,164 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 17:53:17,245 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 17:53:35,047 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 17:54:17,370 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 17:54:31,602 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 17:55:08,961 :INFO :agent_activity :~Agent1 Transfer the call to agent2 in process : Success
+2026-01-20 17:55:14,590 :INFO :agent_activity :~Agent2 accept the transfer call : Success
+2026-01-20 17:55:15,612 :INFO :agent_activity :~Transfer note is appearing to agent2 : Success
+2026-01-20 17:55:17,724 :INFO :agent_activity :~Agent2 hang up the transfer call: Success
+2026-01-20 17:55:18,419 :INFO :agent_activity :~Agent2 successfully mark done the transfer call : Success
+2026-01-20 17:55:49,218 :INFO :agent_activity :~Agent1 Consult Transfer the call to agent2 in process : Success
+2026-01-20 17:55:50,985 :INFO :agent_activity :~Consult Transfer note is appearing to agent2 : Success
+2026-01-20 17:55:53,090 :INFO :agent_activity :~Agent2 hang up the consult transfer call: Success
+2026-01-20 17:55:53,780 :INFO :agent_activity :~Agent2 successfully mark done the consult transfer call : Success
+2026-01-20 17:56:38,487 :INFO :agent_activity :~Agent2 accept the consult call : Success
+2026-01-20 17:56:41,581 :ERROR :agent_activity :~Agent1 Consult conference the call to agent2 in process : Success
+2026-01-20 17:56:56,654 :ERROR :agent_activity :~Consult conference note is appearing to agent2 : Success
+2026-01-20 17:56:58,748 :INFO :agent_activity :~Agent2 hang up the conference transfer call: Success
+2026-01-20 17:56:59,441 :INFO :agent_activity :~Agent2 successfully mark done the consult transfer call : Success
+2026-01-20 17:57:03,243 :INFO :agent_activity :~Agent1 successfully mark done the consult conference call : Success
+2026-01-20 17:57:52,400 :ERROR :agent_activity :~Logout : Fail
+2026-01-20 17:58:15,505 :ERROR :agent_activity :~Logout : Fail
+2026-01-20 18:01:09,128 :INFO :agent_activity :~Intello LogIn page Opened : Success
+2026-01-20 18:01:25,709 :ERROR :agent_activity :~Agent (Call) LogIn : FAIL
+2026-01-20 18:02:24,382 :INFO :agent_activity :~Agent(Telephony channel) register : Success
+2026-01-20 18:02:31,639 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 18:02:42,869 :INFO :agent_activity :~Agent State change to Ready after joining process : Success
+2026-01-20 18:02:53,968 :INFO :agent_activity :~Intello LogIn page Opened in different tab : Success
+2026-01-20 18:03:11,683 :INFO :agent_activity :~Agent (Call) LogIn in different tab : Success
+2026-01-20 18:03:53,979 :INFO :agent_activity :~Agent2(Telephony channel) register in different tab : Success
+2026-01-20 18:04:08,235 :INFO :agent_activity :~Agent process Join Un-join : Success
+2026-01-20 18:04:53,079 :ERROR :agent_activity :~Agent to agent Transfer in process : FAIL
+2026-01-20 18:05:10,162 :ERROR :agent_activity :~Agent2 accept the transfer call : FAIL
+2026-01-20 18:05:25,198 :ERROR :agent_activity :~Transfer note is appearing to agent2 : FAIL
+2026-01-20 18:05:40,228 :ERROR :agent_activity :~Agent2 hang up the transfer call :FAIL
+2026-01-20 18:06:26,404 :ERROR :agent_activity :~Agent2 successfully mark done the transfer call: FAIL
+2026-01-20 18:07:28,470 :ERROR :agent_activity :~Agent1 Consult Transfer the call to agent2 in process : Success
+2026-01-21 16:21:32,166 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-21 16:21:41,547 :ERROR :chat_log_op :~Agent accepts chat : FAIL
+2026-01-21 16:30:59,589 :ERROR :chat_log_op :~Agent (Chat) LogIn : FAIL
+2026-01-21 16:31:04,048 :ERROR :chat_log_op :~Agent(Chat channel) register : FAIL
+2026-01-21 16:31:06,222 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-21 16:31:11,959 :ERROR :chat_log_op :~Agent accepts chat : FAIL
+2026-01-21 16:31:11,960 :INFO :chat_log_op :End chat ignore
+2026-01-21 16:34:24,790 :ERROR :chat_log_op :~Agent (Chat) LogIn : FAIL
+2026-01-21 16:34:28,880 :ERROR :chat_log_op :~Agent(Chat channel) register : FAIL
+2026-01-21 16:34:31,043 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-21 16:34:36,836 :ERROR :chat_log_op :~Agent accepts chat : FAIL
+2026-01-21 16:35:28,785 :ERROR :chat_log_op :~Agent (Chat) LogIn : FAIL
+2026-01-21 16:35:51,123 :ERROR :chat_log_op :~Agent(Chat channel) register : FAIL
+2026-01-21 16:44:08,800 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-21 16:44:14,733 :ERROR :chat_log_op :~Agent(Chat channel) register : FAIL
+2026-01-21 16:47:27,567 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-21 16:48:15,730 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-21 16:48:34,617 :ERROR :chat_log_op :~Agent(Chat channel) register : FAIL
+2026-01-21 16:50:29,267 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-21 16:51:31,691 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-21 16:54:24,018 :ERROR :chat_log_op :~Agent(Chat channel) register : FAIL
+2026-01-21 16:55:00,472 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-21 16:55:26,355 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-21 16:56:09,094 :ERROR :chat_log_op :~Agent(Chat channel) register : FAIL
+2026-01-21 16:58:42,330 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-21 16:59:03,115 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-21 17:00:00,443 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-21 17:00:40,842 :ERROR :chat_log_op :~Agent State change to Ready : FAIL
+2026-01-21 17:01:18,379 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-21 17:01:29,639 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-21 17:01:56,932 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-21 17:02:05,092 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-21 17:02:07,193 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-21 17:02:12,426 :ERROR :chat_log_op :~Agent accepts chat : FAIL
+2026-01-21 17:02:12,430 :INFO :chat_log_op :End chat ignore
+2026-01-21 17:18:50,237 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-21 17:19:33,151 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-21 17:19:54,011 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-21 17:20:16,907 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-21 17:21:50,167 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-21 17:38:31,672 :INFO :chat_log_op :End chat ignore
+2026-01-21 17:40:19,971 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-21 17:40:36,559 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-21 17:41:05,915 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-21 17:41:18,141 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-21 17:53:15,252 :INFO :chat_log_op :End chat ignore
+2026-01-21 18:01:41,754 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-21 18:01:59,265 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-21 18:03:08,963 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-21 18:49:11,868 :ERROR :chat_log_op :~Agent State change to Ready : FAIL
+2026-01-22 10:22:40,409 :ERROR :chat_log_op :~Agent (Chat) LogIn : FAIL
+2026-01-22 10:39:10,045 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 10:39:45,794 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 10:40:15,454 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 10:40:31,629 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 10:43:10,439 :INFO :chat_log_op :End chat ignore
+2026-01-22 10:43:50,182 :ERROR :chat_log_op :~Agent (Chat) LogIn : FAIL
+2026-01-22 10:44:19,997 :ERROR :chat_log_op :~Agent(Chat channel) register : FAIL
+2026-01-22 10:44:50,262 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-22 10:45:30,795 :ERROR :chat_log_op :~Agent accepts chat : FAIL
+2026-01-22 10:45:45,753 :INFO :chat_log_op :End chat ignore
+2026-01-22 10:46:50,607 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 10:47:10,007 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 10:47:30,532 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 10:47:40,600 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 10:51:43,299 :INFO :chat_log_op :End chat ignore
+2026-01-22 10:52:13,240 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 10:52:45,789 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 10:53:30,534 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 10:53:45,961 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 10:59:20,846 :INFO :chat_log_op :End chat ignore
+2026-01-22 10:59:43,776 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 10:59:59,982 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 11:00:21,189 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 11:00:54,263 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 11:03:00,719 :INFO :chat_log_op :End chat ignore
+2026-01-22 11:07:59,661 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 11:08:10,856 :ERROR :chat_log_op :~Agent(Chat channel) register : FAIL
+2026-01-22 11:08:29,233 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 11:08:59,235 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 11:13:01,833 :INFO :chat_log_op :End chat ignore
+2026-01-22 11:13:59,849 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 11:14:24,766 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 11:14:48,505 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 11:15:10,761 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 11:17:09,776 :INFO :chat_log_op :End chat ignore
+2026-01-22 11:17:48,919 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 11:18:14,584 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 11:18:39,044 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 11:18:55,390 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 11:19:15,258 :INFO :chat_log_op :End chat ignore
+2026-01-22 11:20:20,058 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 11:20:31,302 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 11:20:47,514 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 11:20:55,689 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 11:20:57,800 :INFO :chat_log_op :End chat ignore
+2026-01-22 11:41:30,521 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 11:41:48,706 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 11:42:42,877 :ERROR :chat_log_op :~Agent Campaign Join Un-join : FAIL
+2026-01-22 11:42:55,627 :ERROR :chat_log_op :~Agent State change to Ready : FAIL
+2026-01-22 11:45:06,943 :INFO :chat_log_op :End chat ignore
+2026-01-22 11:46:15,212 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 11:46:29,376 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 11:47:10,900 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 11:47:49,078 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 11:53:59,684 :ERROR :chat_log_op :~Agent (Chat) LogIn : FAIL
+2026-01-22 11:54:03,759 :ERROR :chat_log_op :~Agent(Chat channel) register : FAIL
+2026-01-22 12:04:30,706 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 12:04:41,955 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 12:04:58,154 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 12:05:06,312 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 12:05:37,363 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-22 12:22:44,760 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 12:22:56,000 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 12:23:12,228 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 12:23:20,405 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 12:30:33,464 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-22 12:30:43,405 :INFO :chat_log_op :~Agent accepts chat : Success
+2026-01-22 12:30:58,594 :INFO :chat_log_op :~Agent send chat reply : Success
+2026-01-22 12:42:14,025 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 12:42:25,262 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 12:42:41,469 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 12:42:49,640 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 12:45:55,658 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-22 14:18:02,126 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 14:18:13,368 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 14:18:29,594 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 14:18:37,766 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 14:23:20,064 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-22 15:02:16,691 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 15:02:27,945 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 15:02:44,162 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 15:02:52,357 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 15:06:50,046 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 15:07:01,280 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 15:07:17,503 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 15:07:25,679 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 15:08:39,242 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-22 15:08:49,868 :INFO :chat_log_op :~Agent accepts chat : Success
+2026-01-22 16:33:33,330 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 16:33:44,570 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 16:34:00,805 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 16:34:08,988 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 16:34:45,485 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-22 16:35:12,649 :INFO :chat_log_op :~Agent accepts chat : Success
+2026-01-22 16:37:42,407 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 16:37:53,653 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 16:38:09,865 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 16:38:18,035 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 16:39:38,449 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-22 16:39:49,244 :INFO :chat_log_op :~Agent accepts chat : Success
+2026-01-22 16:40:21,304 :ERROR :chat_log_op :~Agent send chat reply : FAIL
+2026-01-22 17:06:48,421 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 17:06:59,653 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-22 17:07:15,892 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 17:07:24,082 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 17:08:17,863 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-22 17:08:26,569 :INFO :chat_log_op :~Agent accepts chat : Success
+2026-01-22 17:09:15,117 :ERROR :chat_log_op :~Agent send chat reply : FAIL
+2026-01-22 18:02:45,215 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 18:02:52,455 :ERROR :chat_log_op :~Agent(Chat channel) register : FAIL
+2026-01-22 18:03:03,677 :ERROR :chat_log_op :~Agent Campaign Join Un-join : FAIL
+2026-01-22 18:03:09,857 :ERROR :chat_log_op :~Agent State change to Ready : FAIL
+2026-01-22 18:04:09,980 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-22 18:04:18,520 :INFO :chat_log_op :~Agent accepts chat : Success
+2026-01-22 18:04:32,561 :INFO :chat_log_op :~Agent send chat reply : Success
+2026-01-22 18:17:05,729 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-22 18:17:12,927 :ERROR :chat_log_op :~Agent(Chat channel) register : FAIL
+2026-01-22 18:17:29,263 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-22 18:17:37,445 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-22 18:18:25,678 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-22 18:20:14,617 :INFO :chat_log_op :~Agent accepts chat : Success
+2026-01-22 18:20:21,074 :INFO :chat_log_op :~Agent send chat reply : Success
+2026-01-27 10:16:31,387 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 10:16:33,506 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 10:23:50,932 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 10:23:54,945 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 10:26:47,198 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 10:26:51,217 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 10:45:25,924 :INFO :email_login_op :~Agent (Email) LogIn : Success
+2026-01-27 10:46:44,603 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 10:54:14,157 :ERROR :email_login_op :~Agent accepts email : Fail
+
+
+
+2026-01-27 10:58:22,488 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 10:58:29,740 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 10:58:35,881 :ERROR :email_login_op :~Agent Email Process Join : Fail
+2026-01-27 10:58:59,461 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 10:59:03,473 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 11:00:42,611 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 11:00:46,661 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 11:02:30,386 :INFO :email_login_op :~Agent (Email) LogIn : Success
+2026-01-27 11:02:41,641 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 11:07:03,342 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 11:07:07,357 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 11:09:15,048 :INFO :email_login_op :~Agent (Email) LogIn : Success
+2026-01-27 11:09:26,322 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 11:12:08,881 :INFO :email_login_op :~Agent (Email) LogIn : Success
+2026-01-27 11:13:52,157 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 11:23:02,787 :INFO :email_login_op :~Agent (Email) LogIn : Success
+2026-01-27 11:23:10,011 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 11:23:34,581 :INFO :email_login_op :~Agent Email Process Join : Success
+2026-01-27 11:25:31,577 :ERROR :email_login_op :~Agent State change to Ready : Fail
+2026-01-27 11:26:50,045 :INFO :email_login_op :~Email land : Success
+2026-01-27 11:36:13,681 :INFO :email_login_op :~Agent (Email) LogIn : Success
+2026-01-27 11:36:24,971 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 11:43:01,158 :INFO :email_login_op :~Agent (Email) LogIn : Success
+2026-01-27 11:43:16,687 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 11:53:09,199 :INFO :email_login_op :~Agent (Email) LogIn : Success
+2026-01-27 11:53:27,854 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 11:54:41,689 :INFO :email_login_op :~Agent Email Process Join : Success
+2026-01-27 11:55:07,658 :INFO :email_login_op :~Agent State change to Ready : Success
+2026-01-27 11:55:32,559 :INFO :email_login_op :~Email land : Success
+2026-01-27 11:55:54,170 :INFO :email_login_op :~Agent accepts email : Success
+2026-01-27 12:09:24,528 :ERROR :email_login_op :~Email forward : Fail
+2026-01-27 12:11:07,783 :ERROR :email_login_op :~Email reply send : Fail
+2026-01-27 12:11:16,404 :ERROR :email_login_op :~Email reply all send : Fail
+2026-01-27 12:11:30,895 :ERROR :email_login_op :~Agent hang up email : Fail
+2026-01-27 12:11:48,423 :ERROR :email_login_op :~Agent Disposition and Mark-Done : Fail
+2026-01-27 12:11:49,100 :ERROR :email_login_op :End email ignore
+2026-01-27 12:22:20,661 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 12:22:24,679 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 12:25:16,379 :ERROR :email_login_op :~Agent Email Process Join : Fail
+2026-01-27 12:25:52,030 :ERROR :email_login_op :~Intello LogIn page Opened : Fail
+2026-01-27 12:26:21,430 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 12:26:52,971 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 12:27:07,863 :INFO :email_login_op :~Agent Email Process Join : Success
+2026-01-27 12:27:24,768 :INFO :email_login_op :~Agent State change to Ready : Success
+2026-01-27 12:30:10,783 :INFO :email_login_op :~Email land : Success
+2026-01-27 12:30:27,474 :INFO :email_login_op :~Agent accepts email : Success
+2026-01-27 12:30:53,895 :INFO :email_login_op :~Email forward : Success
+2026-01-27 12:30:58,802 :ERROR :email_login_op :~Email reply send : Fail
+2026-01-27 12:34:20,314 :ERROR :email_login_op :~Intello LogIn page Opened : Fail
+2026-01-27 12:34:38,480 :INFO :email_login_op :~Agent (Email) LogIn : Success
+2026-01-27 12:34:57,399 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 12:35:11,962 :INFO :email_login_op :~Agent Email Process Join : Success
+2026-01-27 12:35:23,420 :INFO :email_login_op :~Agent State change to Ready : Success
+2026-01-27 12:36:36,560 :INFO :email_login_op :~Email land : Success
+2026-01-27 12:36:53,999 :INFO :email_login_op :~Agent accepts email : Success
+2026-01-27 12:37:15,971 :INFO :email_login_op :~Email forward : Success
+2026-01-27 12:37:44,225 :INFO :email_login_op :~Email reply send : Success
+2026-01-27 12:38:09,177 :INFO :email_login_op :~Email reply all send : Success
+2026-01-27 12:38:19,456 :INFO :email_login_op :~Agent hang up email : Success
+2026-01-27 12:38:25,506 :INFO :email_login_op :~Mark done in process : Success
+2026-01-27 12:38:25,806 :INFO :email_login_op :~Agent Disposition and Mark-Done : Success
+2026-01-27 12:39:10,826 :INFO :email_login_op :~Email agent Logout : Success
+2026-01-27 12:41:42,959 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 12:41:43,725 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 12:43:26,415 :ERROR :email_login_op :~Intello LogIn page Opened : Fail
+2026-01-27 12:43:39,226 :INFO :email_login_op :~Agent (Email) LogIn : Success
+2026-01-27 12:43:50,492 :INFO :email_login_op :~Agent(Email channel) register : Success
+2026-01-27 12:43:59,675 :INFO :email_login_op :~Agent Email Process Join : Success
+2026-01-27 12:44:07,864 :INFO :email_login_op :~Agent State change to Ready : Success
+2026-01-27 12:45:13,593 :INFO :email_login_op :~Email land : Success
+2026-01-27 12:45:21,674 :ERROR :email_login_op :~Agent accepts email : Fail
+2026-01-27 12:45:35,257 :INFO :email_login_op :~Email forward : Success
+2026-01-27 12:45:48,759 :INFO :email_login_op :~Email reply send : Success
+2026-01-27 12:46:02,260 :INFO :email_login_op :~Email reply all send : Success
+2026-01-27 12:46:09,355 :INFO :email_login_op :~Agent hang up email : Success
+2026-01-27 12:46:10,519 :ERROR :email_login_op :~Agent Disposition and Mark-Done : Fail
+2026-01-27 12:46:10,519 :ERROR :email_login_op :End email ignore
+2026-01-27 12:46:18,636 :ERROR :email_login_op :~Email agent Logout : Fail
+
+
+2026-01-27 12:51:30,628 :ERROR :email_login_op :~Intello LogIn page Opened : Fail
+2026-01-27 12:51:48,535 :INFO :email_login_op :~Agent (Email) LogIn : Success
+2026-01-27 12:51:59,811 :INFO :email_login_op :~Agent(Email channel) register : Success
+2026-01-27 12:52:09,008 :INFO :email_login_op :~Agent Email Process Join : Success
+2026-01-27 12:52:17,170 :ERROR :email_login_op :~Agent State change to Ready : Fail
+2026-01-27 12:53:21,618 :INFO :email_login_op :~Email land : Success
+2026-01-27 12:53:29,755 :ERROR :email_login_op :~Agent accepts email : Fail
+2026-01-27 12:53:42,865 :INFO :email_login_op :~Email forward : Success
+2026-01-27 12:53:55,876 :ERROR :email_login_op :~Email reply send : Fail
+2026-01-27 12:54:09,495 :INFO :email_login_op :~Email reply all send : Success
+2026-01-27 12:54:46,630 :ERROR :email_login_op :~Agent hang up email : Fail
+2026-01-27 12:55:17,153 :ERROR :email_login_op :~Agent Disposition and Mark-Done : Fail
+2026-01-27 12:55:17,153 :ERROR :email_login_op :End email ignore
+2026-01-27 12:55:25,242 :ERROR :email_login_op :~Email agent Logout : Fail
+2026-01-27 14:15:10,077 :ERROR :email_login_op :~Intello LogIn page Opened : Fail
+2026-01-27 14:15:33,319 :INFO :email_login_op :~Agent (Email) LogIn : Success
+2026-01-27 14:15:44,577 :INFO :email_login_op :~Agent(Email channel) register : Success
+2026-01-27 14:15:53,770 :INFO :email_login_op :~Agent Email Process Join : Success
+2026-01-27 14:16:01,940 :INFO :email_login_op :~Agent State change to Ready : Success
+2026-01-27 14:17:14,448 :INFO :email_login_op :~Email land : Success
+2026-01-27 14:17:22,536 :ERROR :email_login_op :~Agent accepts email : Fail
+2026-01-27 14:17:36,192 :INFO :email_login_op :~Email forward : Success
+2026-01-27 14:17:49,701 :INFO :email_login_op :~Email reply send : Success
+2026-01-27 14:18:03,238 :INFO :email_login_op :~Email reply all send : Success
+2026-01-27 14:18:10,363 :INFO :email_login_op :~Agent hang up email : Success
+2026-01-27 14:18:12,006 :INFO :email_login_op :~Agent Disposition and Mark-Done : Success
+2026-01-27 14:18:33,330 :INFO :email_login_op :~Email agent Logout : Success
+2026-01-27 14:25:56,074 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 14:26:07,385 :INFO :email_login_op :~Agent(Email channel) register : Success
+2026-01-27 14:26:16,686 :INFO :email_login_op :~Agent Email Process Join : Success
+2026-01-27 14:26:24,836 :INFO :email_login_op :~Agent State change to Ready : Success
+2026-01-27 14:27:21,574 :INFO :email_login_op :~Email land : Success
+2026-01-27 14:27:42,237 :INFO :email_login_op :~Agent accepts email : Success
+2026-01-27 14:28:00,173 :INFO :email_login_op :~Email forward : Success
+2026-01-27 14:28:13,648 :INFO :email_login_op :~Email reply send : Success
+2026-01-27 14:28:27,122 :INFO :email_login_op :~Email reply all send : Success
+2026-01-27 14:28:34,224 :INFO :email_login_op :~Agent hang up email : Success
+2026-01-27 14:28:35,885 :INFO :email_login_op :~Agent Disposition and Mark-Done : Success
+2026-01-27 14:28:57,272 :INFO :email_login_op :~Email agent Logout : Success
+2026-01-27 14:29:27,470 :ERROR :email_login_op :~Intello LogIn page Opened : Fail
+2026-01-27 14:29:44,889 :INFO :email_login_op :~Agent (Email) LogIn : Success
+2026-01-27 14:29:56,343 :INFO :email_login_op :~Agent(Email channel) register : Success
+2026-01-27 14:30:05,542 :INFO :email_login_op :~Agent Email Process Join : Success
+2026-01-27 14:30:13,716 :INFO :email_login_op :~Agent State change to Ready : Success
+2026-01-27 14:31:26,005 :INFO :email_login_op :~Email land : Success
+2026-01-27 14:31:34,185 :ERROR :email_login_op :~Agent accepts email : Fail
+2026-01-27 14:31:48,284 :INFO :email_login_op :~Email forward : Success
+2026-01-27 14:32:01,751 :ERROR :email_login_op :~Email reply send : Fail
+2026-01-27 14:32:15,831 :INFO :email_login_op :~Email reply all send : Success
+2026-01-27 14:32:22,921 :INFO :email_login_op :~Agent hang up email : Success
+2026-01-27 14:32:24,562 :INFO :email_login_op :~Agent Disposition and Mark-Done : Success
+2026-01-27 14:32:45,898 :INFO :email_login_op :~Email agent Logout : Success
+2026-01-27 14:39:57,217 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 14:40:01,228 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 14:40:24,738 :ERROR :email_login_op :~Agent Email Process Join : Fail
+2026-01-27 14:40:26,832 :ERROR :email_login_op :~Agent State change to Ready : Fail
+2026-01-27 14:41:34,917 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 14:41:46,159 :INFO :email_login_op :~Agent(Email channel) register : Success
+2026-01-27 14:41:55,362 :INFO :email_login_op :~Agent Email Process Join : Success
+2026-01-27 14:42:03,539 :INFO :email_login_op :~Agent State change to Ready : Success
+2026-01-27 14:42:21,526 :INFO :email_login_op :~Email land : Success
+2026-01-27 14:42:25,598 :ERROR :email_login_op :~Agent accepts email : Fail
+2026-01-27 14:42:39,235 :INFO :email_login_op :~Email forward : Success
+2026-01-27 14:42:52,723 :INFO :email_login_op :~Email reply send : Success
+2026-01-27 14:43:06,257 :ERROR :email_login_op :~Email reply all send : Fail
+2026-01-27 14:43:13,479 :INFO :email_login_op :~Agent hang up email : Success
+2026-01-27 14:43:15,647 :INFO :email_login_op :~Agent Disposition and Mark-Done : Success
+2026-01-27 14:43:23,666 :ERROR :email_login_op :~Email agent Logout : Fail
+2026-01-27 14:47:12,973 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 14:47:16,987 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 14:47:21,400 :ERROR :email_login_op :~Agent Email Process Join : Fail
+2026-01-27 14:48:04,625 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 14:48:05,257 :ERROR :email_login_op :~Agent(Email channel) register : Fail
+2026-01-27 14:49:32,548 :ERROR :email_login_op :~Agent (Email) LogIn : Fail
+2026-01-27 14:49:43,810 :INFO :email_login_op :~Agent(Email channel) register : Success
+2026-01-27 14:49:52,994 :INFO :email_login_op :~Agent Email Process Join : Success
+2026-01-27 14:50:01,143 :INFO :email_login_op :~Agent State change to Ready : Success
+2026-01-27 14:51:10,836 :INFO :email_login_op :~Email land : Success
+2026-01-27 14:51:19,231 :INFO :email_login_op :~Agent accepts email : Success
+2026-01-27 14:51:33,209 :INFO :email_login_op :~Email forward : Success
+2026-01-27 14:51:47,210 :INFO :email_login_op :~Email reply send : Success
+2026-01-27 14:52:00,714 :INFO :email_login_op :~Email reply all send : Success
+2026-01-27 14:52:07,799 :INFO :email_login_op :~Agent hang up email : Success
+2026-01-27 14:52:09,471 :INFO :email_login_op :~Agent Disposition and Mark-Done : Success
+2026-01-27 14:52:30,849 :INFO :email_login_op :~Email agent Logout : Success
+2026-01-27 15:09:56,670 :INFO :chat_log_op :~Agent (Chat) LogIn : Success
+2026-01-27 15:10:12,130 :INFO :chat_log_op :~Agent(Chat channel) register : Success
+2026-01-27 15:10:28,343 :INFO :chat_log_op :~Agent Campaign Join Un-join : Success
+2026-01-27 15:10:36,519 :INFO :chat_log_op :~Agent State change to Ready : Success
+2026-01-27 15:11:04,556 :ERROR :chat_log_op :~Agent chat client interaction : FAIL
+2026-01-27 15:11:09,076 :INFO :chat_log_op :~Agent accepts chat : Success
+2026-01-27 15:11:16,279 :INFO :chat_log_op :~Agent send chat reply : Success
+2026-01-27 15:11:36,482 :ERROR :chat_log_op :~Positive chat sentiment is displaying : FAIL
+2026-01-27 15:11:43,618 :ERROR :chat_log_op :~Neutral chat sentiment is displaying : FAIL
+2026-01-27 15:11:47,738 :ERROR :chat_log_op :~Negative chat sentiment is displaying : FAIL
+2026-01-27 15:11:48,870 :ERROR :chat_log_op :~Agent hang up chat : FAIL
+2026-01-27 15:11:48,973 :ERROR :chat_log_op :~Agent Disposition and Mark-Done : FAIL
+2026-01-27 15:11:56,077 :ERROR :chat_log_op :End chat ignore
+2026-01-27 15:34:19,398 :ERROR :chat_log_op :~Agent (Chat) LogIn : FAIL
+2026-01-27 15:34:23,523 :ERROR :chat_log_op :~Agent(Chat channel) register : FAIL
+2026-01-27 16:43:11,401 :ERROR :chat_log_op :~Agent (Chat) LogIn : FAIL
+2026-01-27 17:12:41,403 :ERROR :login_op :~Intello LogIn page Opened : FAIL
+2026-01-27 17:13:21,549 :ERROR :login_op :~Agent (Call) LogIn : FAIL
+2026-01-27 17:15:28,882 :INFO :login_op :~Agent(Telephony channel) register : Success
+2026-01-27 17:16:18,041 :ERROR :login_op :~Agent Campaign Join Un-join : FAIL
+2026-01-27 17:16:39,300 :ERROR :login_op :~Agent State change to Ready : FAIL
+2026-01-27 17:20:59,645 :ERROR :login_op :~Intello LogIn page Opened : FAIL
+2026-01-27 17:21:18,956 :ERROR :login_op :~Agent (Call) LogIn : FAIL
+2026-01-27 17:22:12,392 :INFO :login_op :~Intello LogIn page Opened : Success
+2026-01-27 17:22:31,740 :INFO :login_op :~Agent (Call) LogIn : Success
+2026-01-27 17:22:49,247 :INFO :login_op :~Agent(Telephony channel) register : Success
+2026-01-27 17:23:09,556 :INFO :login_op :~Agent Campaign Join Un-join : Success
+2026-01-27 17:23:20,788 :INFO :login_op :~Agent State change to Ready : Success
+2026-01-27 17:23:42,420 :INFO :login_op :~Agent Dail an OutBound call : Success
+2026-01-27 17:23:44,525 :INFO :login_op :~Agent Hold/Un-hold : Success
+2026-01-27 17:24:37,959 :INFO :login_op :~Agent Consult-Conference : Success
+2026-01-27 17:24:41,186 :INFO :login_op :~Mark done process : Success
+2026-01-27 17:25:27,762 :INFO :login_op :~Agent Consult-Transfer : Success
+2026-01-27 17:26:01,609 :INFO :login_op :~Agent Transfer (single-step) : Success
+2026-01-27 17:26:25,720 :INFO :login_op :~Logout : Success
+2026-01-27 17:27:42,599 :INFO :process_calling :~Intello LogIn page Opened : Success
+2026-01-27 17:28:02,050 :ERROR :process_calling :~Agent (Call) LogIn : FAIL
+2026-01-27 17:28:50,772 :INFO :process_calling :~Agent(Telephony channel) register : Success
+2026-01-27 17:28:58,010 :INFO :process_calling :~Agent process Join Un-join : Success
+2026-01-27 17:29:09,203 :INFO :process_calling :~Agent State change to Ready after joining process : Success
+2026-01-27 17:29:43,493 :ERROR :process_calling :~Outbound Call from process : Fail
+2026-01-27 17:29:58,540 :ERROR :process_calling :~Agent Hold/Un-hold on process : FAIL
+2026-01-27 17:30:18,661 :ERROR :process_calling :~Agent Consult-Conference in process : FAIL
+2026-01-27 17:30:33,803 :ERROR :process_calling :~Mark done in process : FAIL
+2026-01-27 17:31:06,185 :ERROR :process_calling :~Agent Consult-Transfer in process: Fail

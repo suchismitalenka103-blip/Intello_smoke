@@ -15,25 +15,25 @@ from testdata.logindata import LoginData
 class ChatLogin(BaseClass):
     def __init__(self, driver):
         self.driver = driver
+        self.wait = WebDriverWait(driver, 20)
 
     # Locators for agent login
-    login_username = "LoginForm.username"
-    login_password = "loginForm.password"
+    login_username = "//input[@name='loginid']"
+    login_password = "//input[@id='password']"
     login_click = "loginForm.Login"
     chat_register = "//div[@class='modal-content']//div[@class='terminal_register_boxin_header']"
-    extension_no = "//input[@placeholder='Extension']"
+    extension_no = "//input[@placeholder='Terminal']"
     extension_name = "//input[@placeholder='Username']"
     extension_pass = "//input[@placeholder='Password']"
     extension_click = "//button[text()='Next']"
     chat_terminal_check = f"//div[@class='terminal_extension_list']//a[normalize-space()='{LoginData.chat_extn}']"
     toast = "//div[@class='ng-tns-c49-0 toast-message ng-star-inserted']"
-    login_state = "//div[@class='LoggedIn status']"
+    login_state = "//span[@class='LogIn profiler_btn_img']"
     skip_btn = "//button[normalize-space()='Skip']"
     camp_click = "//div[@class='interaction_indicators']"
-    unjoin_check = "//app-switch[@class='switch']//span[@class='slider']"
-    unjoin = "//app-switch[@class='switch partial']"
-    campaign_join = "//div[@id='Cheked0']//span[@class='slider']"
-    logged_in_state = "//span[@class='LoggedIn profiler_btn_img']//img[@alt='Profile']"
+    queue_join = f"(//div[contains(@class,'acs_content_grid_row')][.//div[@id='name' and normalize-space()='{LoginData.process_name}']]//app-switch//span[@class='slider'])[2]"
+    process_join = f"//div[contains(@class,'acs_content_grid_row')][.//div[@id='name' and normalize-space()='{LoginData.process_name}']]//div[contains(@id,'Cheked')]//span[@class='slider']"
+    logged_in_state = "//span[@class='LogIn profiler_btn_img']//img[@alt='Profile']"
     dialog = "//ngb-modal-window[@role='dialog']"
     # unjoin = "//app-switch[@class='switch partial']"
     # campaign_join = "//app-switch[@class='d-flex justify-content-end']//span[@class='slider']"
@@ -43,11 +43,12 @@ class ChatLogin(BaseClass):
 
     # Locators for chat interaction
     accept_btn = "//button[normalize-space()='Accept']"
-    chat_header = "//div[@class='chat_boxin_headerin']"
+    chat_header = "//div[@class='chat_boxin_headerin white_card']"
     chat_textbox = "//div[@role='textbox']"
     send_icon = "//span[@class='imoon icon-send']"
-    text1 = "//span[@class='message_text ng-star-inserted']"
+    text1 = "//span[contains(@class,'message_text')]"
     hangup = "//span[@class='imoon icon-exit']"
+    client_textbox = "//textarea[@id='msgChat']"
     minimize_icon = "//span[@class='imoon icon-window-minimize']"
     sentiment = "//div[@class='sentiment_box']"
     scroll_page = "//div[@class='interaction_widgetsin']"
@@ -72,10 +73,12 @@ class ChatLogin(BaseClass):
     msg_box = "//div[@class='details']//span"
 
     # Locators for chat client
-    client_textbox = "//input[@id='msg']"
-    client_inputname = "//input[@id='name']"
+    client_name = "ContactAddress_ParentAttribute"
+    client_inputname = "//input[@type='text' and @id='ContactAddress']"
+    web_send_btn = "//input[@type='submit' and @id ='chatSubmit']"
+    chat_btn = "//div[@id='eastChat2']//button"
     invite_btn = "//label[normalize-space()='Invite']"
-    client_chat_send_btn = "//button[normalize-space()='SEND']"
+    client_chat_send_btn = '''//button[@title='Send' and @id="submitPreChatForm"]'''
 
     # Chat type
     postivie_chat = "Good"
@@ -108,10 +111,14 @@ class ChatLogin(BaseClass):
             log.error("~Intello LogIn page Opened : FAIL")
 
         try:
-            self.driver.find_element(By.ID, self.login_username).send_keys(LoginData.chat_login_data)
-            time.sleep(2)
-            self.driver.find_element(By.ID, self.login_password).send_keys(LoginData.chat_login_data)
-            time.sleep(2)
+            WebDriverWait(self.driver, 50).until(
+                lambda d: d.execute_script('return document.readyState') == 'complete'
+            )
+            WebDriverWait(self.driver, 20).until(
+                        EC.visibility_of_element_located((By.XPATH, self.login_username))
+                    )
+            self.driver.find_element(By.XPATH, self.login_username).send_keys(LoginData.chat_login_data)
+            self.driver.find_element(By.XPATH, self.login_password).send_keys(LoginData.chat_login_data)
             self.driver.find_element(By.ID, self.login_click).click()
             time.sleep(2)
             chatreg = WebDriverWait(self.driver, 30).until(
@@ -134,7 +141,7 @@ class ChatLogin(BaseClass):
             time.sleep(4)
             assert terminal.is_displayed()
             agent_state = self.driver.find_element(By.XPATH, self.login_state)
-            assert agent_state.get_attribute("class") == "LoggedIn status"
+            assert agent_state.get_attribute("class") == "LogIn profiler_btn_img"
             log.info("~Agent(Chat channel) register : Success")
         except:
             log.error("~Agent(Chat channel) register : FAIL")
@@ -145,18 +152,14 @@ class ChatLogin(BaseClass):
             time.sleep(10)
             self.driver.find_element(By.XPATH, self.camp_click).click()
             time.sleep(2)
-            unjoin_camp = self.driver.find_element(By.XPATH, self.unjoin_check)
-            time.sleep(3)
-            if unjoin_camp.is_displayed:
-                time.sleep(2)
-                self.driver.find_element(By.XPATH, self.campaign_join).click()
-                time.sleep(2)
-                self.driver.find_element(By.XPATH, self.unjoin).click()
-                time.sleep(6)
-                self.driver.find_element(By.XPATH, self.campaign_join).click()
-                time.sleep(2)
+            self.driver.find_element(By.XPATH, self.queue_join).click()
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.process_join).click()
+            time.sleep(2)
             success = self.driver.find_element(By.XPATH, self.success_toast)
             assert success.is_displayed()
+            # success = self.driver.find_element(By.XPATH, self.success_toast)
+            # assert success.is_displayed()
             log.info("~Agent Campaign Join Un-join : Success")
         except:
             log.error("~Agent Campaign Join Un-join : FAIL")
@@ -202,23 +205,32 @@ class ChatLogin(BaseClass):
                     print("Chat icon is present but not enabled.")
             except:
                 print("Chat icon not found or not loaded.")
-            # self.driver.get(LoginData.chat_client_url)
-            # time.sleep(10)
-            # self.driver.find_element(By.XPATH, "//input[@id='address']").send_keys("BBSR")
-            self.driver.find_element(By.XPATH, self.client_inputname).send_keys(LoginData.chat_name)
-            # self.driver.find_element(By.XPATH, "//input[@id='cdn']").send_keys("DebitCard")
-            time.sleep(5)
-            self.driver.find_element(By.XPATH, self.invite_btn).click()
-            # self.driver.find_element(By.XPATH, "//label[normalize-space()='Invite']").click()
-            # log.info("Request sent by Chat Client : Success")
-            time.sleep(5)
-
-            # Switch to original tab
-            self.driver.switch_to.window(self.driver.window_handles[0])
-            time.sleep(1)
         except:
-            log.error("~Agent chat client interaction : FAIL")
-            self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}chat agent chat client interaction.png")
+            print("Chat icon not found or not loaded.")
+
+        # try:
+        self.driver.find_element(By.XPATH, self.chat_btn).click()
+        time.sleep(1)
+        self.driver.switch_to.frame("chatIframe")
+        # element = self.driver.find_element(By.XPATH, self.client_inputname)
+        # self.driver.execute_script(
+        #     LoginData.chat_name, element
+        # )
+
+        self.driver.find_element(By.XPATH, self.client_inputname).send_keys(LoginData.chat_name)
+        # self.driver.find_element(By.XPATH, "//input[@id='cdn']").send_keys("DebitCard")
+        time.sleep(5)
+        self.driver.find_element(By.XPATH, self.web_send_btn).click()
+        # self.driver.find_element(By.XPATH, "//label[normalize-space()='Invite']").click()
+        # log.info("Request sent by Chat Client : Success")
+        time.sleep(5)
+
+        # Switch to original tab
+        self.driver.switch_to.window(self.driver.window_handles[0])
+        time.sleep(1)
+        # except:
+        log.error("~Agent chat client interaction : FAIL")
+        self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}chat agent chat client interaction.png")
 
         try:
             accept = WebDriverWait(self.driver, 40).until(EC.presence_of_element_located((By.XPATH, self.accept_btn)))
@@ -237,18 +249,22 @@ class ChatLogin(BaseClass):
             time.sleep(2)
             self.driver.find_element(By.XPATH, self.send_icon).click()
             time.sleep(2)
-            text_check = self.driver.find_element(By.XPATH, self.text1).text
-            assert text_check == "Hy"
+            messages = self.driver.find_elements(By.XPATH, self.text1)
+            latest_message = messages[-1].text.strip()
+            print(latest_message)
+            assert latest_message == "Hy"
             log.info("~Agent send chat reply : Success")
         except:
             log.error("~Agent send chat reply : FAIL")
             self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}Agent send chat reply.png")
         # chat sentiment for positive chat
         try:
-            self.driver.find_element(By.XPATH, self.minimize_icon).click()
+            # self.driver.find_element(By.XPATH, self.minimize_icon).click()
             time.sleep(2)
             self.driver.switch_to.window(self.driver.window_handles[1])
             time.sleep(2)
+            self.driver.switch_to.frame("chatIframe")
+            time.sleep(1)
             self.driver.find_element(By.XPATH, self.client_textbox).send_keys(self.postivie_chat)
             time.sleep(2)
             self.driver.find_element(By.XPATH, self.client_chat_send_btn).click()
@@ -257,10 +273,12 @@ class ChatLogin(BaseClass):
             time.sleep(2)
             # self.driver.find_element(By.XPATH, self.minimize_icon).click()
             time.sleep(2)
-            get = self.driver.find_element(By.XPATH, self.chat_get).text
-            time.sleep(10)
-            print(get)
-            assert get == self.postivie_chat
+
+            messages = self.driver.find_elements(By.XPATH, self.text1)
+            time.sleep(2)
+            latest_message = messages[-1].text.strip()
+            print(latest_message)
+            assert latest_message == self.postivie_chat
             self.driver.find_element(By.XPATH, self.msg_box).click()
             time.sleep(2)
             iframe = WebDriverWait(self.driver, 10).until(
@@ -409,12 +427,12 @@ class ChatLogin(BaseClass):
 
     def chat_log_op(self):
         log = self.getLogger()
-        # try:
-        #     self.chat_login(log)
-        # except:
-        #     print("chat login fail")
+        try:
+            self.chat_login(log)
+        except:
+            print("chat login fail")
         # try:
         self.chat_find(log)
         # except:
         #     print("chat interaction fail")
-        log.info("End chat ignore")
+        # log.info("End chat ignore")
