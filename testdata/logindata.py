@@ -11,6 +11,7 @@ class LoginData:
     aes_login_data = {"username": "demoaesagent", "password": "demoaesagent"}
     chat_login_data = "Chatagent@0"
     email_login_data = "Emailagent@1"
+    email_login_data1 = "Emailagent@0"
     # chat client url
     chat_client_url = "https://qa.radius.visnet.in/RadiusChatClient/"
     campaign_name = "demo_test_camp"
@@ -22,6 +23,7 @@ class LoginData:
     aes_psw = "40038"
     chat_extn = "auto"
     email_extn = "auto"
+    email_extn1 = "auto1"
 
     # my_mobile = "6746663958"
     test_mobile_one = "6746663958"

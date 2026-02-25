@@ -160,7 +160,7 @@ class Login(BaseClass):
                     next.click()
             except :
                 print("Registered ")
-            time.sleep(5)
+            time.sleep(2)
             terminal = self.driver.find_element(By.XPATH, self.terminal_check)
             assert terminal.is_displayed()
             agent_state = self.driver.find_element(By.XPATH, self.login_state)

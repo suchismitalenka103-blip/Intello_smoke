@@ -29,6 +29,7 @@ class EmailLogin(BaseClass):
     login_username = "//input[@name='loginid']"
     login_password = "//input[@id='password']"
     login_click = "loginForm.Login"
+    new_prof = "//span[@class='imoon icon-add']"
     email_register = "//div[@class='modal-content']//div[@class='terminal_register_boxin_header']"
     extension_no = "//input[@placeholder='Terminal']"
     extension_name = "//input[@placeholder='Username']"
@@ -58,6 +59,10 @@ class EmailLogin(BaseClass):
     status_value = "(//div[@class='tooltip-inner'])[1]"
     interaction_active = "//button[@class='tm_opts_btn int_btn active int_mail']//span[@class='int_btn_sts']"
     hang_up = "//button[@type='button' and  @ngbtooltip='HangUp']"
+
+    #transfer location
+    transfer_icon = "//button[@id='interactTelTransferTrig']"
+    transfer_agent = "//li[contains(@class,'tlu_user')]//span[contains(@class,'agent_name')]"
 
     # Locators for Forward and reply
     email_header = '''(//div[@class="shortmail_matter text-truncate pointer" and text()='This is an email with attachment sent from Python'])'''
@@ -258,6 +263,7 @@ class EmailLogin(BaseClass):
             log.error("~Agent accepts email : Fail")
             self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}Agent accepts email.png")
 
+    def email_functionality(self, log):
         # Forward mail
         try:
             time.sleep(2)
@@ -363,6 +369,7 @@ class EmailLogin(BaseClass):
             log.error("End email ignore")
             self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}email agent Disposition and Mark-Done.png")
 
+    def logout(self, log):
         try:
             time.sleep(8)
             element = self.driver.find_element(By.XPATH, self.active_profile)
@@ -396,6 +403,101 @@ class EmailLogin(BaseClass):
             print(f"logout fail{e}")
             self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}(Email)logout.png")
 
+    def email_login_tranfer(self, log):
+        try:
+            time.sleep(2)
+            # self.driver.execute_script("window.open()")
+            # Switch to the newly opened tab
+            self.driver.execute_script("window.open('about:blank', '_blank');")
+            new_tab = self.driver.window_handles[-1]
+            # self.driver.switch_to.window(self.driver.window_handles[1])
+            # new_tab = self.driver.window_handles[-1]
+            self.driver.switch_to.window(new_tab)
+            time.sleep(1)
+            # time.sleep(2)
+            self.driver.get(LoginData.product_url)
+            # action = ActionChains(self.driver)
+            # action.send_keys(Keys.ENTER).perform()
+            time.sleep(3)
+            # self.driver.refresh()
+            time.sleep(5)
+            WebDriverWait(self.driver, 20).until(
+                EC.presence_of_all_elements_located((By.XPATH, self.page_heading))
+            )
+            text1 = self.driver.find_element(By.XPATH, self.page_heading).text
+            print(text1)
+            assert text1 == 'Login'
+        except:
+            print("fail")
+        try:
+            WebDriverWait(self.driver, 30).until(
+                lambda d: d.execute_script('return document.readyState') == 'complete'
+            )
+            self.driver.find_element(By.XPATH, self.new_prof).click()
+            time.sleep(1)
+            self.driver.find_element(By.XPATH, self.login_username).send_keys(LoginData.email_login_data1)
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.login_password).send_keys(LoginData.email_login_data1)
+            time.sleep(2)
+            self.driver.find_element(By.ID, self.login_click).click()
+            time.sleep(2)
+            telreg = WebDriverWait(self.driver, 30).until(
+                EC.presence_of_element_located((By.XPATH, self.email_register))
+            )
+            assert telreg.is_displayed()
+            log.info("~Agent (Email) LogIn in different tab : Success")
+        except:
+
+            log.error("~Agent (Email) LogIn in different tab : Success")
+        try:
+            time.sleep(4)
+            self.driver.find_element(By.XPATH, self.extension_no).send_keys(LoginData.email_extn1)
+            self.driver.find_element(By.XPATH, self.extension_name).send_keys(LoginData.email_extn1)
+            self.driver.find_element(By.XPATH, self.extension_pass).send_keys(LoginData.email_extn1)
+            self.driver.find_element(By.XPATH, self.extension_click).click()
+            time.sleep(3)
+            # toast = WebDriverWait(self.driver, 30).until(
+            #     EC.presence_of_element_located((By.XPATH, self.toast))).text
+            # print(toast)
+            # assert toast == "Email terminal registered"
+            terminal = self.driver.find_element(By.XPATH, self.email_terminal_check)
+            time.sleep(4)
+            assert terminal.is_displayed()
+            agent_state = self.driver.find_element(By.XPATH, self.login_state)
+            assert agent_state.get_attribute("class") == "LogIn profiler_btn_img"
+        except:
+            log.error("~Agent(Email channel) register : Fail")
+            # log.error("End email ignore : FAIL")
+            self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}Agent(Email channel) register.png")
+            self.driver.find_element(By.XPATH, self.skip_btn).click()
+
+    def transfer_agent2(self,log):
+        try:
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            time.sleep(2)
+            self.accept_op(log)
+            self.driver.switch_to.window(self.driver.window_handles[-1])
+            self.process_join_m(log)
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.transfer_icon).click()
+            time.sleep(1)
+            time.sleep(2)
+            element1 = WebDriverWait(self.driver, 30).until(
+                EC.presence_of_element_located((By.XPATH, self.disposition_click)))
+            assert element1.is_displayed()
+            log.info("~Agent transfer the email : Success")
+        except:
+            log.error("~Agent transfer the email : Fail")
+        try:
+            self.driver.switch_to.window(self.driver.window_handles[-1])
+            self.accept_op(log)
+            self.logout(log)
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            self.logout(log)
+        except:
+            print("transfer")
+
     def email_login_op(self):
         log = self.getLogger()
         try:
@@ -414,4 +516,20 @@ class EmailLogin(BaseClass):
             self.accept_op(log)
         except :
             print("Accept fail")
+        try:
+            self.email_functionality(log)
+        except:
+            print("email_functionality fail")
 
+        try:
+            self.email_login_tranfer(log)
+        except:
+            print("email_login_tranfer")
+        try:
+            self.mail_sender(log)
+        except:
+            print("email sender fail")
+        try:
+            self.transfer_agent2(log)
+        except:
+            print("failed")

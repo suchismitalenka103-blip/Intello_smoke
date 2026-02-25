@@ -2,6 +2,7 @@ import time
 import os
 from pathlib import Path
 
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
@@ -50,26 +51,27 @@ class ChatLogin(BaseClass):
     hangup = "//span[@class='imoon icon-exit']"
     client_textbox = "//textarea[@id='msgChat']"
     minimize_icon = "//span[@class='imoon icon-window-minimize']"
-    sentiment = "//div[@class='sentiment_box']"
+    sentiment = "//div[@class='inside_circle']"
+    sentiment_text = "//div[@class='tooltip-inner']"
     scroll_page = "//div[@class='interaction_widgetsin']"
     sentiment_iframe = "(//iframe[1])[8]"
     exapand_icon = "//button[@class='misb_actions_btn']//span[@class='imoon icon-expand']"
 
     # Locators for disposition
-    disposition_click = "//div[@class='dropdown-toggle blupper_wave cursor_pointer ng-star-inserted']"
+    disposition_click = "//span[normalize-space(text())='Answered']/parent::button"
     # disposition_click = "/button[@type='button']//span[@class='imoon icon-disposition']"
     dispostion_one = "(//button[@class='isml_tab_btn ng-star-inserted'])[1]"
-    mark_done = "//div[@class='blupper_wave cursor_pointer ng-star-inserted']"
+    mark_done = "(//div[contains(@class,'int_opts')]//button[contains(@class,'int_opts_btn')])[1]"
     dispostion_tab = "//div[@class='intopt_schedulepad']"
     disp_ok_btn = "//button[@type='button'][normalize-space()='Ok']"
 
     # Locators for logout
     active_profile = "//span[@class='profiler_btn_img Ready']//img[@alt='Profile']"
-    not_ready = "//span[normalize-space()='NotReady']"
-    not_ready_reason = "//div[@id='NotReady']//ul[1]//li[1]"
+    not_ready = "//span[normalize-space()='Break']"
+    not_ready_reason = "//div[@id='Break']//ul[1]//li[1]"
     logout_btn = "//button[contains(text(),'Logout')]"
     logout_cause = "(//div[@class='reason_lists ng-star-inserted']//button)[1]"
-    lg_out_btn = "(//span[text()='Logout'])[2]"
+    lg_out_btn = "(//span[text()='Logout'])"
     msg_box = "//div[@class='details']//span"
 
     # Locators for chat client
@@ -82,12 +84,12 @@ class ChatLogin(BaseClass):
 
     # Chat type
     postivie_chat = "Good"
-    negative1 = "Fraud company"
+    nuetral = "this product is ok"
     negative2 = "Worst"
 
     # assert for sentiment
     # neutral = "//div[@class='smiley_square neutral'] "
-    sentiment_text = '''//div[@id="root"]//div[@class="realtime-sentiment"]//div[@class="sentiment_sense"]//span[contains(@class, "sense_state") and contains(@class, "text-capitalize")]'''
+    # sentiment_text = '''//div[@id="root"]//div[@class="realtime-sentiment"]//div[@class="sentiment_sense"]//span[contains(@class, "sense_state") and contains(@class, "text-capitalize")]'''
     sentiment_title = '''//span[@title="Session Start Time" and @class="start-time"]'''
     neutral = "//div[@class='realtime-sentiment']//div[@class='smiley_square neutral' and @title='Neutral']"
     positive = "//div[@id='root']//div[@class='sentiment_boxin']//div[@class='smiley_square positive']"
@@ -208,29 +210,30 @@ class ChatLogin(BaseClass):
         except:
             print("Chat icon not found or not loaded.")
 
-        # try:
-        self.driver.find_element(By.XPATH, self.chat_btn).click()
-        time.sleep(1)
-        self.driver.switch_to.frame("chatIframe")
-        # element = self.driver.find_element(By.XPATH, self.client_inputname)
-        # self.driver.execute_script(
-        #     LoginData.chat_name, element
-        # )
+        try:
+            self.driver.implicitly_wait(10)
+            self.driver.find_element(By.XPATH, self.chat_btn).click()
+            time.sleep(1)
+            self.driver.switch_to.frame("chatIframe")
+            # element = self.driver.find_element(By.XPATH, self.client_inputname)
+            # self.driver.execute_script(
+            #     LoginData.chat_name, element
+            # )
 
-        self.driver.find_element(By.XPATH, self.client_inputname).send_keys(LoginData.chat_name)
-        # self.driver.find_element(By.XPATH, "//input[@id='cdn']").send_keys("DebitCard")
-        time.sleep(5)
-        self.driver.find_element(By.XPATH, self.web_send_btn).click()
-        # self.driver.find_element(By.XPATH, "//label[normalize-space()='Invite']").click()
-        # log.info("Request sent by Chat Client : Success")
-        time.sleep(5)
+            self.driver.find_element(By.XPATH, self.client_inputname).send_keys(LoginData.chat_name)
+            # self.driver.find_element(By.XPATH, "//input[@id='cdn']").send_keys("DebitCard")
+            time.sleep(5)
+            self.driver.find_element(By.XPATH, self.web_send_btn).click()
+            # self.driver.find_element(By.XPATH, "//label[normalize-space()='Invite']").click()
+            # log.info("Request sent by Chat Client : Success")
+            time.sleep(5)
 
-        # Switch to original tab
-        self.driver.switch_to.window(self.driver.window_handles[0])
-        time.sleep(1)
-        # except:
-        log.error("~Agent chat client interaction : FAIL")
-        self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}chat agent chat client interaction.png")
+            # Switch to original tab
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            time.sleep(1)
+        except:
+            log.error("~Agent chat client interaction : FAIL")
+            self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}chat agent chat client interaction.png")
 
         try:
             accept = WebDriverWait(self.driver, 40).until(EC.presence_of_element_located((By.XPATH, self.accept_btn)))
@@ -279,96 +282,106 @@ class ChatLogin(BaseClass):
             latest_message = messages[-1].text.strip()
             print(latest_message)
             assert latest_message == self.postivie_chat
-            self.driver.find_element(By.XPATH, self.msg_box).click()
-            time.sleep(2)
-            iframe = WebDriverWait(self.driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, self.sentiment_iframe))
-            )
-            time.sleep(2)
-            self.driver.switch_to.frame(iframe)
-            time.sleep(2)
-            element1 = WebDriverWait(self.driver, 30).until(
-                EC.presence_of_element_located((By.XPATH, self.sentiment_text))
-            )
-            element = element1.text
-            assert element == "Positive"
+            # self.driver.find_element(By.XPATH, self.msg_box).click()
+            # time.sleep(2)
+            sentiment_element1 = self.driver.find_element(By.XPATH, self.sentiment)
+            action = ActionChains(self.driver)
+            action.move_to_element(sentiment_element1).perform()
+            # time.sleep(2)
+            tooltip = self.driver.find_element(By.XPATH,self.sentiment_text).text
+            print(tooltip)
+            # value = self.driver.find_element(By.XPATH, self.status_value).text
+            # ActionChains(self.driver).move_to_element(self.sentiment).perform()
+            assert 'Positive' in tooltip
+            # element = element1.text
+            # assert element == "Positive"
             log.info("~Positive chat sentiment is displaying : Success")
+
         except:
             log.error("~Positive chat sentiment is displaying : FAIL")
             self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}Positive chat sentiment is displaying.png")
+        #chat reply
+        try:
+            self.driver.find_element(By.XPATH, self.chat_textbox).send_keys("Thank you")
+            time.sleep(2)
+            self.driver.find_element(By.XPATH, self.send_icon).click()
+            time.sleep(2)
+            messages = self.driver.find_elements(By.XPATH, self.text1)
+            latest_message1 = messages[-1].text.strip()
+            print(latest_message1)
+            assert latest_message1 == "Thank you"
+        except:
+            print("fail")
         # chat sentiment for neutral chat
         try:
-            time.sleep(3)
-            time.sleep(2)
             self.driver.switch_to.window(self.driver.window_handles[1])
-            time.sleep(2)
-            self.driver.find_element(By.XPATH, self.client_textbox).send_keys(self.negative1)
+            time.sleep(1)
+            self.driver.switch_to.frame("chatIframe")
+            time.sleep(1)
+            self.driver.find_element(By.XPATH, self.client_textbox).send_keys(self.nuetral)
             time.sleep(2)
             self.driver.find_element(By.XPATH, self.client_chat_send_btn).click()
             time.sleep(2)
             self.driver.switch_to.window(self.driver.window_handles[0])
             time.sleep(2)
             # self.driver.find_element(By.XPATH, self.minimize_icon).click()
-            time.sleep(10)
-            self.driver.find_element(By.XPATH, self.msg_box).click()
+            messages = self.driver.find_elements(By.XPATH, self.text1)
             time.sleep(2)
-            get = self.driver.find_element(By.XPATH, self.chat_get).text
-            print(get)
-            assert get == self.negative1
-            time.sleep(2)
-            self.driver.find_element(By.XPATH, self.msg_box).click()
-            time.sleep(10)
-            iframe = WebDriverWait(self.driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, self.sentiment_iframe))
-            )
-            self.driver.switch_to.frame(iframe)
-            element = WebDriverWait(self.driver, 50).until(
-                EC.presence_of_element_located((By.XPATH, self.sentiment_text))
-            )
-            sentiment_state = self.driver.execute_script('return arguments[0].textContent;', element).strip().lower()
-            assert sentiment_state == "neutral"
-            element = WebDriverWait(self.driver, 50).until(
-                EC.presence_of_element_located((By.XPATH, self.sentiment_title))
-            )
-            element_title = element.text
-            print(element_title)
-            assert element_title != '00:00'
+            latest_message = messages[-1].text.strip()
+            print(latest_message)
+            assert latest_message == self.nuetral
+            sentiment_element = self.driver.find_element(By.XPATH, self.sentiment)
+            action = ActionChains(self.driver)
+            action.move_to_element(sentiment_element).perform()
+            # time.sleep(2)
+            tooltip1 = self.driver.find_element(By.XPATH, self.sentiment_text).text
+            print(tooltip1)
+            assert 'Neutral' in tooltip1
             log.info("~Neutral chat sentiment is displaying : Success")
 
         except:
             log.error("~Neutral chat sentiment is displaying : FAIL")
             self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}Neutral chat sentiment is displaying.png")
-
-        # chat sentiment for neutral chat
+        # chat reply
         try:
+            self.driver.find_element(By.XPATH, self.chat_textbox).send_keys("Why it is ok ok")
             time.sleep(2)
+            self.driver.find_element(By.XPATH, self.send_icon).click()
+            time.sleep(2)
+            messages = self.driver.find_elements(By.XPATH, self.text1)
+            latest_message2 = messages[-1].text.strip()
+            print(latest_message2)
+            assert latest_message2 == "Why it is ok ok"
+        except:
+            print("fail")
+
+        # chat sentiment for negative chat
+        try:
             self.driver.switch_to.window(self.driver.window_handles[1])
-            time.sleep(2)
+            time.sleep(1)
+            self.driver.switch_to.frame("chatIframe")
+            time.sleep(1)
             self.driver.find_element(By.XPATH, self.client_textbox).send_keys(self.negative2)
             time.sleep(2)
             self.driver.find_element(By.XPATH, self.client_chat_send_btn).click()
             time.sleep(2)
             self.driver.switch_to.window(self.driver.window_handles[0])
             time.sleep(2)
-            self.driver.find_element(By.XPATH, self.msg_box).click()
-            time.sleep(10)
-            get = self.driver.find_element(By.XPATH, self.chat_get).text
-            print(get)
-            assert get == self.negative2
-            time.sleep(10)
-            self.driver.find_element(By.XPATH, self.msg_box).click()
+            # self.driver.find_element(By.XPATH, self.minimize_icon).click()
+            messages = self.driver.find_elements(By.XPATH, self.text1)
             time.sleep(2)
-            iframe = WebDriverWait(self.driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, self.sentiment_iframe))
-            )
-            self.driver.switch_to.frame(iframe)
-            element = WebDriverWait(self.driver, 60).until(
-                EC.presence_of_element_located((By.XPATH, self.sentiment_text))
-            )
-            # sentiment_state = element.text.strip().lower()
-            sentiment_state = self.driver.execute_script('return arguments[0].textContent;', element).strip().lower()
-            assert sentiment_state == "negative"
+            latest_message3 = messages[-1].text.strip()
+            print(latest_message3)
+            assert latest_message3 == self.negative2
+            sentiment_element = self.driver.find_element(By.XPATH, self.sentiment)
+            action = ActionChains(self.driver)
+            action.move_to_element(sentiment_element).perform()
+            # time.sleep(2)
+            tooltip2 = self.driver.find_element(By.XPATH, self.sentiment_text).text
+            print(tooltip2)
+            assert 'Negative' in tooltip2
             log.info("~Negative chat sentiment is displaying : Success")
+            # assert sentiment_state == "negative"
         except:
             log.error("~Negative chat sentiment is displaying : FAIL")
             self.driver.save_screenshot(
@@ -378,8 +391,8 @@ class ChatLogin(BaseClass):
             # time.sleep(2)
             self.driver.switch_to.default_content()
             time.sleep(1)
-            self.driver.find_element(By.XPATH, self.exapand_icon).click()
-            time.sleep(2)
+            # self.driver.find_element(By.XPATH, self.exapand_icon).click()
+            # time.sleep(2)
             btn = WebDriverWait(self.driver, 60).until(
                 EC.presence_of_element_located((By.XPATH, self.hangup))
             )
@@ -392,47 +405,71 @@ class ChatLogin(BaseClass):
             log.error("~Agent hang up chat : FAIL")
             self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}Agent hang up chat.png")
         try:
-            self.driver.find_element(By.XPATH, self.disposition_click).click()
-            time.sleep(2)
-            self.driver.find_element(By.XPATH, self.dispostion_one).click()
+            element1 = WebDriverWait(self.driver, 30).until(
+                EC.presence_of_element_located((By.XPATH, self.disposition_click)))
+            # time.sleep(1)
+            element1.click()
+            wait = WebDriverWait(self.driver, 20)
+            btn = wait.until(
+                EC.element_to_be_clickable((By.XPATH, self.mark_done)))
+            # btn.click()
+            self.driver.execute_script("arguments[0].click();", btn)
+            # self.driver.find_element(By.XPATH, self.mark_done).click()
             time.sleep(1)
-            self.driver.find_element(By.XPATH, self.disp_ok_btn).click()
-            time.sleep(2)
-            self.driver.find_element(By.XPATH, self.mark_done).click()
+            toast = self.driver.find_element(By.XPATH, self.success_toast)
+            assert toast.is_displayed()
             log.info("~Agent Disposition and Mark-Done : Success")
-            log.info("End chat ignore")
         except:
             log.error("~Agent Disposition and Mark-Done : FAIL")
             # log.error("End chat ignore")
             self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}chat agent Disposition and Mark-Done.png")
 
+    def logout(self, log):
         try:
-            time.sleep(7)
-            self.driver.find_element(By.XPATH, self.active_profile).click()
+            time.sleep(8)
+            element = self.driver.find_element(By.XPATH, self.active_profile)
             time.sleep(2)
-            self.driver.find_element(By.XPATH, self.not_ready).click()
-            time.sleep(2)
-            self.driver.find_element(By.XPATH, self.not_ready_reason).click()
-            time.sleep(2)
-            self.driver.find_element(By.XPATH, self.logout_btn).click()
-            time.sleep(2)
-            self.driver.find_element(By.XPATH, self.logout_cause).click()
-            time.sleep(2)
-            self.driver.find_element(By.XPATH, self.lg_out_btn).click()
-            time.sleep(7)
-            log.info("End chat ignore")
-        except:
-            log.error("End chat ignore")
-            self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}(chat)Logout.png")
-
+            if element.is_displayed():
+                element = self.driver.find_element(By.XPATH, self.active_profile).click()
+                self.driver.find_element(By.XPATH, self.not_ready).click()
+                time.sleep(2)
+                self.driver.find_element(By.XPATH, self.not_ready_reason).click()
+                time.sleep(2)
+                self.driver.find_element(By.XPATH, self.logout_btn).click()
+                time.sleep(2)
+                self.driver.find_element(By.XPATH, self.logout_cause).click()
+                time.sleep(2)
+                self.driver.find_element(By.XPATH, self.lg_out_btn).click()
+                time.sleep(3)
+            else:
+                element1 = self.driver.find_element(By.XPATH, self.logged_in_state)
+                assert element1.is_displayed()
+                self.driver.find_element(By.XPATH, self.logged_in_state).click()
+                time.sleep(2)
+                self.driver.find_element(By.XPATH, self.logout_btn).click()
+                time.sleep(2)
+                self.driver.find_element(By.XPATH, self.logout_cause).click()
+                time.sleep(2)
+                self.driver.find_element(By.XPATH, self.lg_out_btn).click()
+                time.sleep(3)
+            log.info("~Chat agent Logout : Success")
+        except Exception as e:
+            log.error("~Chat agent Logout : Fail")
+            print(f"logout fail{e}")
+            self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}(Chat)logout.png")
+ # smoke test
     def chat_log_op(self):
         log = self.getLogger()
         try:
             self.chat_login(log)
         except:
             print("chat login fail")
-        # try:
-        self.chat_find(log)
-        # except:
-        #     print("chat interaction fail")
+        try:
+          self.chat_find(log)
+        except:
+            print("chat interaction fail")
         # log.info("End chat ignore")
+        try:
+            self.logout(log)
+        except:
+            print("chat logout fail")
