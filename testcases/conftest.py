@@ -16,27 +16,27 @@ prefs = {
     "profile.default_content_setting_values.notifications": 2  # This sets the disk cache to use 0 bytes
 }
 
-options = webdriver.ChromeOptions()
-options.add_argument('ignore-certificate-errors')
-options.add_experimental_option("prefs", prefs)
-options.add_argument('--disable-cache')
-options.add_argument('--disable-application-cache')
-options.add_argument("--disable-save-password-bubble")
-options.add_argument("--incognito")
-options.add_argument("--allow-insecure-localhost")
-prefs = {"profile.managed_default_content_settings.javascript": 1}
-options.add_experimental_option("prefs", prefs)
-options.add_argument("--allow-file-access-from-files")
-options.add_argument("--disable-web-security")
-options.add_argument("--allow-running-insecure-content")
-options.add_argument("--disable-gpu")
-options.add_argument("--no-sandbox")
-options.add_argument("--allow-file-access-from-files")
-options.add_argument("--disable-web-security")
-options.add_argument("--allow-file-access")
-options.add_argument("--disable-gpu")
-options.add_argument("--disable-features=IsolateOrigins,site-per-process")
-options.page_load_strategy = "none"
+# options = webdriver.ChromeOptions()
+# options.add_argument('ignore-certificate-errors')
+# options.add_experimental_option("prefs", prefs)
+# options.add_argument('--disable-cache')
+# options.add_argument('--disable-application-cache')
+# options.add_argument("--disable-save-password-bubble")
+# options.add_argument("--incognito")
+# options.add_argument("--allow-insecure-localhost")
+# prefs = {"profile.managed_default_content_settings.javascript": 1}
+# options.add_experimental_option("prefs", prefs)
+# options.add_argument("--allow-file-access-from-files")
+# options.add_argument("--disable-web-security")
+# options.add_argument("--allow-running-insecure-content")
+# options.add_argument("--disable-gpu")
+# options.add_argument("--no-sandbox")
+# options.add_argument("--allow-file-access-from-files")
+# options.add_argument("--disable-web-security")
+# options.add_argument("--allow-file-access")
+# options.add_argument("--disable-gpu")
+# options.add_argument("--disable-features=IsolateOrigins,site-per-process")
+# options.page_load_strategy = "none"
 driver = None
 # locators
 detail_button = "details-button"
@@ -44,12 +44,30 @@ proceed_link = "proceed-link"
 user_name = "loginId"
 user_pass = "loginPword"
 login_btn = "//button[normalize-space()='Login']"
-
+chrome_args = [
+    "--headless",  # Runs Chrome in headless mode (no GUI)
+    "--no-sandbox",  # Required in many CI environments
+    "--disable-gpu",  # Disable GPU acceleration
+    "--disable-dev-shm-usage",  # Use /tmp instead of /dev/shm
+    "--disable-extensions",  # Disable all extensions
+    "--disable-popup-blocking",  # Disable popups
+    "--ignore-certificate-errors",  # Ignore SSL errors
+    "--disable-features=PasswordManagerUI,PasswordCheck",  # Disable password manager
+    "--disable-background-networking",
+    "--disable-sync",
+    "--disable-translate",
+    "--disable-background-timer-throttling",
+    "--disable-client-side-phishing-detection",
+    "--no-first-run",
+    "--disable-blink-features=AutomationControlled",
+]
 
 @pytest.fixture(autouse=True)
 def setup(request):
     global driver
-    options = webdriver.ChromeOptions()
+    options = Options()
+    for arg in chrome_args:
+        options.add_argument(arg)
     prefs = {
         "profile.password_manager_enabled": False,
         "credentials_enable_service": False,
@@ -58,30 +76,30 @@ def setup(request):
         "profile.default_content_setting_values.notifications": 2
     }
 
-    options.add_argument("--ignore-certificate-errors")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-cache")
-    options.add_argument("--disable-application-cache")
-    # options.add_argument("--incognito")
-    options.add_argument("--disable-features=PasswordManagerUI,PasswordCheck")
-    options.add_argument("--disable-save-password-bubble")
-    options.add_argument("--use-fake-ui-for-media-stream")
-    options.add_argument("user-data-dir=C:\\temp\\selenium_profile")
-    options.add_argument("--guest")
-    options.add_argument("--allow-insecure-localhost")
-    options.add_experimental_option("prefs", prefs)
-    prefs = {"profile.managed_default_content_settings.javascript": 1}
-    options.add_experimental_option("prefs", prefs)
-    options.add_argument("--allow-file-access-from-files")
-    options.add_argument("--disable-web-security")
-    options.add_argument("--allow-running-insecure-content")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--allow-file-access-from-files")
-    options.add_argument("--disable-web-security")
-    options.add_argument("--allow-file-access")
-    options.add_argument("--disable-features=IsolateOrigins,site-per-process")
-    options.page_load_strategy = "none"
+    # options.add_argument("--ignore-certificate-errors")
+    # options.add_argument("--no-sandbox")
+    # options.add_argument("--disable-cache")
+    # options.add_argument("--disable-application-cache")
+    # # options.add_argument("--incognito")
+    # options.add_argument("--disable-features=PasswordManagerUI,PasswordCheck")
+    # options.add_argument("--disable-save-password-bubble")
+    # options.add_argument("--use-fake-ui-for-media-stream")
+    # options.add_argument("user-data-dir=C:\\temp\\selenium_profile")
+    # options.add_argument("--guest")
+    # options.add_argument("--allow-insecure-localhost")
+    # options.add_experimental_option("prefs", prefs)
+    # prefs = {"profile.managed_default_content_settings.javascript": 1}
+    # options.add_experimental_option("prefs", prefs)
+    # options.add_argument("--allow-file-access-from-files")
+    # options.add_argument("--disable-web-security")
+    # options.add_argument("--allow-running-insecure-content")
+    # options.add_argument("--disable-gpu")
+    # options.add_argument("--no-sandbox")
+    # options.add_argument("--allow-file-access-from-files")
+    # options.add_argument("--disable-web-security")
+    # options.add_argument("--allow-file-access")
+    # options.add_argument("--disable-features=IsolateOrigins,site-per-process")
+    # options.page_load_strategy = "none"
     # options = Options()
 
     driver = webdriver.Chrome(options=options)
