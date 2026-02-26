@@ -9,9 +9,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/suchismitalenka103-blip/Seleniumpython.git', 
-                    branch: "${BRANCH_NAME}",
+                git(
+                    url: 'https://github.com/suchismitalenka103-blip/Intello_smoke.git',
+                    branch: 'main',
                     credentialsId: 'github-https-selenium'
+                )
             }
         }
 
