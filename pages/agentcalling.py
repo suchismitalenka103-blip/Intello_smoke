@@ -190,7 +190,10 @@ class Agent_calling(BaseClass):
             self.driver.find_element(By.XPATH, self.skip_btn).click()
         # join process
         try:
-            self.driver.find_element(By.XPATH, self.camp_click).click()
+            self.driver.implicitly_wait(20)
+            camp_click1 = self.driver.find_element(By.XPATH, self.camp_click)
+            self.driver.execute_script("arguments[0].click();", camp_click1)
+            # self.driver.find_element(By.XPATH, self.camp_click).click()
             time.sleep(3)
             unjoin_camp = self.driver.find_element(By.XPATH, self.unjoin_check)
             time.sleep(3)

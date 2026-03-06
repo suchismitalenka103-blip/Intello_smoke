@@ -11,7 +11,7 @@ class TestTwo:
         obc = ChatLogin(self.driver)
         obc.chat_log_op()
 
-    # def test_two(self):
-    #     print("test two started")
-    #     obe = EmailLogin(self.driver)
-    #     obe.email_login_op()
+    def test_two(self):
+        print("test two started")
+        obe = EmailLogin(self.driver)
+        obe.email_login_op()

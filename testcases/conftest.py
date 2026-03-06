@@ -10,11 +10,11 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from testdata.logindata import LoginData
-prefs = {
-    "profile.managed_default_content_settings.images": 2,  # Disable images
-    "profile.default_content_setting_values.media_stream_mic": 1,  # Allow mic
-    "profile.default_content_setting_values.notifications": 2  # This sets the disk cache to use 0 bytes
-}
+# prefs = {
+#     "profile.managed_default_content_settings.images": 2,  # Disable images
+#     "profile.default_content_setting_values.media_stream_mic": 1,  # Allow mic
+#     "profile.default_content_setting_values.notifications": 2  # This sets the disk cache to use 0 bytes
+# }
 
 # options = webdriver.ChromeOptions()
 # options.add_argument('ignore-certificate-errors')
@@ -37,6 +37,7 @@ prefs = {
 # options.add_argument("--disable-gpu")
 # options.add_argument("--disable-features=IsolateOrigins,site-per-process")
 # options.page_load_strategy = "none"
+#"--headless",
 driver = None
 # locators
 detail_button = "details-button"
@@ -45,7 +46,7 @@ user_name = "loginId"
 user_pass = "loginPword"
 login_btn = "//button[normalize-space()='Login']"
 chrome_args = [
-    "--headless",  # Runs Chrome in headless mode (no GUI)
+       # Runs Chrome in headless mode (no GUI)
     "--no-sandbox",  # Required in many CI environments
     "--disable-gpu",  # Disable GPU acceleration
     "--disable-dev-shm-usage",  # Use /tmp instead of /dev/shm
@@ -60,21 +61,38 @@ chrome_args = [
     "--disable-client-side-phishing-detection",
     "--no-first-run",
     "--disable-blink-features=AutomationControlled",
-]
+    "--use-fake-ui-for-media-stream",
+    "--use-fake-device-for-media-stream",
+    "--window-size=1366,768",
+    "--disable-features=PasswordManagerUI,PasswordCheck",
+    "--disable-save-password-bubble",
 
+    "--start-maximized",
+
+
+]
+prefs = {
+    "credentials_enable_service": False,
+    "profile.password_manager_enabled": False,
+    "profile.password_manager_leak_detection": False,
+    "profile.default_content_setting_values.notifications": 2,
+    "profile.default_content_setting_values.media_stream_mic": 1,
+    "profile.default_content_setting_values.media_stream_camera": 1
+}
 @pytest.fixture(autouse=True)
 def setup(request):
     global driver
     options = Options()
     for arg in chrome_args:
         options.add_argument(arg)
-    prefs = {
-        "profile.password_manager_enabled": False,
-        "credentials_enable_service": False,
-        "profile.managed_default_content_settings.images": 1,
-        "profile.default_content_setting_values.media_stream_mic": 1,
-        "profile.default_content_setting_values.notifications": 2
-    }
+        options.add_experimental_option("prefs", prefs)
+    # prefs = {
+    #     "profile.password_manager_enabled": False,
+    #     "credentials_enable_service": False,
+    #     "profile.managed_default_content_settings.images": 1,
+    #     "profile.default_content_setting_values.media_stream_mic": 1,
+    #     "profile.default_content_setting_values.notifications": 2
+    # }
 
     # options.add_argument("--ignore-certificate-errors")
     # options.add_argument("--no-sandbox")
@@ -110,6 +128,7 @@ def setup(request):
     # width = 1024
     # height = 768
     # driver.set_window_size(width, height)
+    driver.set_window_size(1920, 1080)
     yield
     driver.quit()
 

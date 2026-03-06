@@ -135,8 +135,9 @@ class Process_Calling(BaseClass):
             # WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.XPATH, "//div[@class='terminal_extension_list']")))
             # time.sleep(5)
         try:
-            self.driver.find_element(By.XPATH, self.camp_click).click()
-            time.sleep(3)
+            self.driver.implicitly_wait(20)
+            camp_click1 = self.driver.find_element(By.XPATH, self.camp_click)
+            self.driver.execute_script("arguments[0].click();", camp_click1)
             # unjoin_camp = self.driver.find_element(By.XPATH, self.unjoin_check1)
             # time.sleep(3)
             # if unjoin_camp.is_displayed:

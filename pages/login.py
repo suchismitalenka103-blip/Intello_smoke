@@ -21,6 +21,7 @@ class Login(BaseClass):
     def __init__(self, driver):
         self.driver = driver
 
+
     # Locators for login
     page_heading = "//span[@class='lht_primary']"
     login_username = "//input[@name='loginid']"
@@ -39,7 +40,9 @@ class Login(BaseClass):
     row_xpath = f"//div[contains(@class,'acs_content_grid_row')][.//div[@id='name' and normalize-space()='{LoginData.campaign_name}']]//div[contains(@id,'Cheked')]//span[@class='slider']"
     logged_in_state = "//span[@class='LogIn profiler_btn_img']//img[@alt='Profile']"
     dialog = "//ngb-modal-window[@role='dialog']"
-    unjoin_check = "//app-switch[@class='switch']//span[@class='slider']"
+    unjoin_check = '''//div[@class="switch ng-star-inserted"]'''
+    join_all = '''//app-switch[@class='switch']//span[@class='slider']'''
+    unjoin_all = "//app-switch[@class='switch partial']//span[@class='slider']"
     unjoin = "//app-switch[@class='switch partial']"
     campaign_join = "//div[@id='Cheked0']//span[@class='slider']"
     toast = "//div[@class='ng-tns-c49-0 toast-message ng-star-inserted']"
@@ -101,6 +104,7 @@ class Login(BaseClass):
     print(past_time.strftime("%Y/%m/%d %H:%M:%S"))
 
     def login_task(self, log):
+
         try:
             self.driver.get(LoginData.product_url)
             # self.driver.refresh()
@@ -172,23 +176,37 @@ class Login(BaseClass):
             self.driver.find_element(By.XPATH, self.skip_btn).click()
 
     def camp_join(self, log):
+
         # camp join un join
         try:
             # a = Alert(self.driver)
             # a.accept()
             # WebDriverWait(self.driver, 180).until(EC.presence_of_element_located((By.XPATH, "//div[@class='terminal_extension_list']")))
-            time.sleep(2)
-            self.driver.find_element(By.XPATH, self.camp_click).click()
-            time.sleep(3)
+            self.driver.implicitly_wait(20)
+            camp_click1 = self.driver.find_element(By.XPATH, self.camp_click)
+            self.driver.execute_script("arguments[0].click();", camp_click1)
+            # self.driver.find_element(By.XPATH, self.camp_click).click()
+            # unjoin_check1 = self.driver.find_element(By.XPATH, self.unjoin_check)
+            # self.driver.execute_script("arguments[0].click();", unjoin_check1)
             unjoin_camp = self.driver.find_element(By.XPATH, self.unjoin_check)
             time.sleep(3)
             if unjoin_camp.is_displayed:
                 time.sleep(2)
-                self.driver.find_element(By.XPATH, self.campaign_join).click()
+                campaign_join1 = self.driver.find_element(By.XPATH, self.join_all)
+                self.driver.execute_script("arguments[0].click();", campaign_join1)
                 time.sleep(2)
-                self.driver.find_element(By.XPATH, self.unjoin).click()
-                time.sleep(6)
-                self.driver.find_element(By.XPATH, self.row_xpath).click()
+                unjoin1 = self.driver.find_element(By.XPATH, self.unjoin_all)
+                self.driver.execute_script("arguments[0].click();", unjoin1)
+                # self.driver.find_element(By.XPATH, self.unjoin).click()
+                # time.sleep(6)
+                # row_xpath1 = self.driver.find_element(By.XPATH, self.row_xpath)
+                # self.driver.execute_script("arguments[0].click();", row_xpath1)
+                self.driver.implicitly_wait(20)
+                row_xpath1 = self.driver.find_element(By.XPATH, self.row_xpath)
+                self.driver.execute_script("arguments[0].click();", row_xpath1)
+                self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}(crossx)join_unjoinpass.png")
+                # row_xpath1 = EC.self.driver.find_element(By.XPATH, self.row_xpath)
+                # self.driver.find_element(By.XPATH, self.row_xpath).click()
                 time.sleep(2)
             success = self.driver.find_element(By.XPATH, self.success_toast)
             assert success.is_displayed()
@@ -203,9 +221,14 @@ class Login(BaseClass):
             btn = self.driver.find_element(By.XPATH, self.dialog)
             self.driver.execute_script("arguments[0].click();", btn)
             time.sleep(2)
-            self.driver.find_element(By.XPATH, self.logged_in_state).click()
-            time.sleep(2)
-            self.driver.find_element(By.XPATH, self.ready_state).click()
+            self.driver.implicitly_wait(20)
+            btn1 = self.driver.find_element(By.XPATH, self.logged_in_state)
+            self.driver.execute_script("arguments[0].click();", btn1)
+            # self.driver.find_element(By.XPATH, self.logged_in_state).click()
+            # time.sleep(2)
+            btn2 = self.driver.find_element(By.XPATH, self.ready_state)
+            self.driver.execute_script("arguments[0].click();", btn2)
+            # self.driver.find_element(By.XPATH, self.ready_state).click()
             time.sleep(5)
             agent_ready = self.driver.find_element(By.XPATH, self.ready_state_check)
             assert agent_ready.is_displayed()
@@ -218,8 +241,13 @@ class Login(BaseClass):
 
     def call_activity(self, log):
         try:
-            time.sleep(2)
-            self.driver.find_element(By.XPATH, self.interaction_add).click()
+            self.driver.implicitly_wait(20)
+            waiting = WebDriverWait(self.driver, 20)
+            interaction1 = waiting.until(
+                EC.element_to_be_clickable((By.XPATH, self.interaction_add))
+            )
+            interaction1.click()
+            # interaction1  = self.driver.find_elementun(By.XPATH, self.interaction_add).click()
             time.sleep(2)
             self.driver.find_element(By.XPATH, self.dial_pad).send_keys(LoginData.test_mobile_two)
             time.sleep(5)
@@ -250,7 +278,6 @@ class Login(BaseClass):
         try:
             self.driver.find_element(By.XPATH, self.hold).click()
             time.sleep(2)
-
             hold_check = self.driver.find_element(By.XPATH, self.inactive_hangup_btn)
             assert hold_check.is_displayed()
             log.info("~Agent Hold/Un-hold : Success")
@@ -260,10 +287,18 @@ class Login(BaseClass):
             self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}(crossx)hold/unhold.png")
 
     def consult(self, log):
+        WebDriverWait(self.driver, 20).until(
+            lambda d: d.execute_script(
+                "return window.getAllAngularTestabilities && "
+                "window.getAllAngularTestabilities()[0].isStable()"
+            )
+        )
         try:
             time.sleep(5)
-            self.driver.find_element(By.XPATH, self.unhold).click()
-            time.sleep(5)
+            btn1 = self.driver.find_element(By.XPATH, self.unhold)
+            self.driver.execute_script("arguments[0].click();", btn1)
+            # self.driver.find_element(By.XPATH, self.unhold).click()
+            time.sleep(2)
             # element = WebDriverWait(self.driver, 180).until(
             #     EC.element_to_be_clickable((By.NAME, self.consult_click)))
             # self.driver.execute_script("arguments[0].click();", element)
@@ -345,7 +380,12 @@ class Login(BaseClass):
             self.driver.save_screenshot(f"..\\screenshot\\{self.time_stamp}(crossx)consult-transfer.png")
 
     def transfer(self, log):
-
+        WebDriverWait(self.driver, 20).until(
+            lambda d: d.execute_script(
+                "return window.getAllAngularTestabilities && "
+                "window.getAllAngularTestabilities()[0].isStable()"
+            )
+        )
         # Transfer
         try:
             WebDriverWait(self.driver, 20).until(
